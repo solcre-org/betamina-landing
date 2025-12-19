@@ -1,0 +1,84 @@
+/* ******************************************** */
+/** SETTINGS: FONTS
+/* ******************************************** */
+
+@font-face {
+    font-family: 'FT Calhern Wide Betamina';
+    src: url('../../fonts/FTCalhern-WideBoldItalic.woff') format('woff2'),
+        url('../../fonts/FTCalhern-Wide700Italic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt Betamina';
+    src: url('../../fonts/Prompt-Italic.woff2') format('woff2'),
+        url('../../fonts/Prompt-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt Betamina';
+    src: url('../../fonts/Prompt-MediumItalic.woff2') format('woff2'),
+        url('../../fonts/Prompt-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt Betamina';
+    src: url('../../fonts/Prompt-Medium.woff2') format('woff2'),
+        url('../../fonts/Prompt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt Betamina';
+    src: url('../../fonts/Prompt-SemiBoldItalic.woff2') format('woff2'),
+        url('../../fonts/Prompt-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt Betamina';
+    src: url('../../fonts/Prompt-Regular.woff2') format('woff2'),
+        url('../../fonts/Prompt-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt Betamina';
+    src: url('../../fonts/Prompt-SemiBold.woff2') format('woff2'),
+        url('../../fonts/Prompt-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt Betamina';
+    src: url('../../fonts/Prompt-Bold.woff2') format('woff2'),
+        url('../../fonts/Prompt-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt Betamina';
+    src: url('../../fonts/Prompt-BoldItalic.woff2') format('woff2'),
+        url('../../fonts/Prompt-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}

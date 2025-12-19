@@ -1,0 +1,347 @@
+/* ******************************************** */
+/** HOME: HERO
+/* ******************************************** */
+
+.c-hero{
+    --heading-max-w: 9.5em;
+    --heading-fz: var(--fz-900);
+    --text-max-w: 29em;
+
+    position: relative;
+    isolation: isolate;
+    background: 
+    linear-gradient(180deg, hsl(var(--color-primary-900-hsl)/0%), hsl(var(--color-primary-900-hsl)/100%)),
+    linear-gradient(60deg, var(--color-alternate-400) 60%, var(--color-primary-400));
+    padding-top: var(--header);
+    padding-bottom: calc(var(--section-y)*2);
+}
+
+.c-hero__bg{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    opacity: .08;
+    height: 60%;
+    z-index: -1;
+}
+
+.c-hero__bg img{
+    object-fit: cover;
+    object-position: center 10%;
+    width: 100%;
+    height: 100%;
+}
+
+.c-hero__content{
+    z-index: 1;
+}
+
+.c-hero__text{
+    margin-top: 1.5em;
+}
+
+.c-hero__features{
+    margin-top: 1.5em;
+}
+
+.c-hero-features{
+    font-size: var(--fz-200);
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8em 2em;
+}
+
+.c-hero-features__item {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.c-hero__ctas{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3.5em;
+    gap: 1.5em;
+}
+
+.c-hero__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8em;
+    font-size: var(--fz-200);
+    opacity: .7;
+    margin-top: 3em;
+}
+
+.c-hero__tech--desktop{
+    display: none;
+}
+
+.c-hero__tech img{
+    display: inline-block;
+    height: 1.6em;
+    vertical-align: middle;
+}
+
+.c-hero__image-holder{
+    position: relative;
+    isolation: isolate;
+    margin-top: var(--section-y);
+}
+
+.c-hero__image-holder::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-55%,-40%);
+    width: 420%;
+    height: 220%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(/assets/images/static/hero/hero-app-mockup-bg.png);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.c-hero__picture{
+    width: 75%;
+    margin-inline: auto;
+}
+
+.c-hero-image__feature{
+    display: flex;
+    gap: .6em;
+    padding: .9em 1.1em;
+    border-radius: 1em;
+    font-size: var(--fz-100);
+    font-weight: 500;
+    backdrop-filter: blur(2em);
+    letter-spacing: .06em;
+    background-color: hsl(var(--color-neutral-100-hsl)/20%);
+    border: 1px solid hsl(var(--color-neutral-100-hsl)/5%);
+    box-shadow: 0 .5em 2em 0 hsl(var(--color-neutral-900-hsl) / 25%);
+    position: absolute;
+    top: 0;
+}
+
+.c-hero-image__feature:nth-of-type(1){
+    top: 10%;
+    left: 5%;
+}
+
+.c-hero-image__feature:nth-of-type(2){
+    top: 45%;
+    right: 0;
+}
+
+.c-hero-image__feature:nth-of-type(3){
+    top: 80%;
+}
+
+.c-hero-image__feature .c-icon{
+    width: 1.2em;
+    min-width: 1.2em;
+    height: 1.2em;
+    margin-top: 0.1em;
+}
+
+
+
+/* ********************** SHORT MOBILE ********************** */
+
+@media (max-width: 22.4375rem) { /* 359px */
+}
+
+
+
+
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) { /* 767px, 730px */
+}
+
+ 
+
+
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) { /* 500px, 767px */
+
+    .c-hero__wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--space-x);
+        padding-block: calc(var(--section-y)*.3);
+    }
+
+    .c-hero__image-holder{
+        margin-top: 0;
+    }
+
+    .c-hero__tech--mobile{
+        display: none;
+    }
+
+    .c-hero__tech--desktop{
+        display: block;
+    }
+    
+}
+
+
+
+
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) { /* 768px */
+
+    .c-hero__bg{
+        height: 100%;
+        width: 80%;
+    }
+
+    .c-hero__wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--space-x);
+    }
+
+    .c-hero__image-holder{
+        margin-top: 0;
+    }
+
+    .c-hero__tech--mobile{
+        display: none;
+    }
+
+    .c-hero__tech--desktop{
+        display: block;
+    }
+
+    .c-hero-image__feature:nth-of-type(3){
+        top: 70%;
+    }
+
+}
+@media (min-width: 48rem) and (orientation: portrait) {
+
+    
+
+}
+
+
+
+/* ********************** de Tablet a DESKTOP ********************** */
+
+@media (min-width: 61.25rem) { /* 980px */
+
+    .c-hero{
+    background: 
+    linear-gradient(180deg, hsl(var(--color-primary-900-hsl)/0%), hsl(var(--color-primary-900-hsl)/100%)),
+    linear-gradient(60deg, var(--color-alternate-400) 30%, var(--color-primary-400));
+    }
+
+    .c-hero__wrapper{
+        grid-template-columns: 1fr 1fr;
+        padding-block: calc(var(--section-y)*.4);
+    }
+
+    .c-hero__picture {
+        width: 65%;
+    }
+
+    .c-hero-image__feature:nth-of-type(1){
+        top: 18%;
+    }
+
+}
+
+
+
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+
+@media (min-width: 75rem) { /* 1200px */
+
+    .c-hero__wrapper{
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .c-hero__content{
+        padding-right: 6rem;
+    }
+
+    .c-hero-image__feature:nth-of-type(1){
+        left: -8%;
+    }
+
+    .c-hero-image__feature:nth-of-type(3){
+        left: -25%;
+    }
+
+    .c-hero__picture {
+        transform: translateX(-10%);
+    }
+
+}
+@media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
+}
+
+
+
+
+/* ********************** de Desktop 2 a HD ********************** */
+
+@media (min-width: 87.5rem) { /* 1400px */
+
+    .c-hero__text {
+        margin-top: 2em;
+    }
+
+    .c-hero__tech{
+        margin-top: 5em;
+    }
+
+    .c-hero__features {
+        margin-top: 2em;
+    }
+
+    .c-hero__ctas{
+        margin-top: 5.5em;
+    }
+
+}
+@media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
+}
+
+
+
+
+/* ********************** de Hd a FULL HD ********************** */
+
+@media (min-width: 100rem) { /* 1600px */
+
+    .c-hero__wrapper{
+        grid-template-columns: 1.2fr 0.8fr;
+    }
+
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) { /* 1600px, 790px */
+}
+@media (min-width: 100rem) and (min-height: 56.25rem) { /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) { /* 1800px */
+}
+@media (min-width: 112.5rem) and (min-height: 56.25rem) { /* 1800px, 900px */
+}

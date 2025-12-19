@@ -1,0 +1,50 @@
+/* ******************************************** */
+/** COMPONENT: HEADINGS
+/* ******************************************** */
+
+/*
+  ! HEADING
+  OVERRIDES:
+    * // --heading-ff               // Font family
+    * // --heading-fz               // Font size
+    * // --heading-fw               // Font weight
+    * // --heading-lh               // Line height
+    * // --heading-ls               // Letter spacing
+    * // --heading-color            // Color
+    * // --heading-strong-color     // Strong Color
+    * // --heading-strong-fw        // Strong Font weight
+*/
+
+.u-heading{
+    --_fz: var(--fz-700);
+    --_ff: var(--font-alt);
+    --_lh: 1;
+    --_fw: 700;
+
+    font-family: var(--heading-ff, var(--_ff));
+    font-size: var(--heading-fz, var(--_fz));
+    font-weight: var(--heading-fw, var(--_fw));
+    line-height: var(--heading-lh, var(--_lh));
+    font-style: italic;
+    letter-spacing: var(--heading-ls, -0.06em);
+    text-transform: uppercase;
+    color: var(--heading-color, inherit);
+
+    max-width: var(--heading-max-w, inherit);
+}
+
+.u-heading-xs{
+    --_fz: var(--fz-600);
+    --_ff: var(--font);
+    --_lh: 1;
+    --_fw: 600;
+
+    font-family: var(--heading-ff, var(--_ff));
+    font-size: var(--heading-fz, var(--_fz));
+    font-weight: var(--heading-fw, var(--_fw));
+    line-height: var(--heading-lh, var(--_lh));
+    letter-spacing: var(--heading-ls, -0.02em);
+    color: var(--heading-color, inherit);
+
+    max-width: var(--heading-max-w, inherit);
+}

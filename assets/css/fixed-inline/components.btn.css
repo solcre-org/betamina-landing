@@ -1,0 +1,154 @@
+/* ******************************************** */
+/** COMPONENT: BTN
+/* ******************************************** */
+
+/* BTN */
+
+.c-btn{
+    --_color: var(--color-neutral-100);
+    --_bg: var(--color-primary-300);
+    --_bg-alt: var(--color-secondary-400);
+    --_fz: var(--fz-200);
+    --_fw: 500;
+    --_px: 1.1em;
+    --_py: 0.66em;
+    --_border-w: 2px;
+    --_border-color: var(--_bg-alt);
+
+    display: inline-flex;
+    font-size: var(--btn-fz, var(--_fz));
+    font-weight: var(--btn-fw, var(--_fw));
+    line-height: 1.1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--btn-bg, var(--_bg));
+    background: linear-gradient(45deg, var(--_bg), var(--_bg-alt));
+    color: var(--btn-color, var(--_color));
+    border-radius: 2em;
+    padding: var(--btn-py, var(--_py)) var(--btn-px, var(--_px));
+    box-shadow: 0 1.3em 1.3em -1em hsl(var(--color-neutral-900-hsl) / 25%);
+}
+
+.c-btn--stroke{
+  border: var(--_border-w) solid var(--_border-color);
+  box-shadow: none;
+  background: transparent;
+}
+
+.c-btn.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.c-btn.is-loading{
+   position: relative;
+}
+
+.c-btn.is-loading:before {
+   content: "";
+   display: inline-block;
+   width: 1em;
+   height: 1em;
+   margin-right: .5em;
+   border-radius: 50%;
+   border-bottom: .2rem solid transparent;
+   border-right: .2rem solid var(--color-neutral-100);
+   border-left: .2rem solid var(--color-neutral-100);
+   border-top: .2rem solid var(--color-neutral-100);
+   animation: loader 1s linear infinite;
+}
+
+
+@keyframes loader {
+ from {
+   transform: rotate(0deg);
+ }
+ to {
+   transform: rotate(360deg);
+ }
+}
+
+
+
+/* ********************** SHORT MOBILE ********************** */
+
+@media (max-width: 22.4375rem) { /* 359px */
+}
+
+
+
+
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) { /* 767px, 730px */
+}
+
+ 
+
+
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) { /* 500px, 767px */
+}
+
+
+
+
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) { /* 768px */
+
+}
+@media (min-width: 48rem) and (orientation: portrait) {
+}
+
+
+
+
+/* ********************** de Tablet a DESKTOP ********************** */
+
+@media (min-width: 61.25rem) { /* 980px */
+}
+
+
+
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+
+@media (min-width: 75rem) { /* 1200px */
+}
+@media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
+}
+
+
+
+
+/* ********************** de Desktop 2 a HD ********************** */
+
+@media (min-width: 87.5rem) { /* 1400px */
+}
+@media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
+}
+
+
+
+
+/* ********************** de Hd a FULL HD ********************** */
+
+@media (min-width: 100rem) { /* 1600px */
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) { /* 1600px, 790px */
+}
+@media (min-width: 100rem) and (min-height: 56.25rem) { /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) { /* 1800px */
+
+}
+@media (min-width: 112.5rem) and (min-height: 56.25rem) { /* 1800px, 900px */
+}

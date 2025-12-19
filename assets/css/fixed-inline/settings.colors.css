@@ -1,0 +1,43 @@
+/* ******************************************** */
+/** SETTINGS: COLORS
+/* ******************************************** */
+
+:root {
+
+    /* ! COLORS */
+
+    /* * Primary */
+    --color-primary-300: #0079FA; 
+    --color-primary-400: #0068F9; 
+    --color-primary-400-hsl: 215 100% 49%;
+    --color-primary-500: #0048C5; 
+    --color-primary-600: #0039AC; 
+    --color-primary-900: #010439; 
+    --color-primary-900-hsl: 237 97% 12%; 
+    
+    /* * Secondary */
+    --color-secondary-400: #00B4FC; 
+    --color-secondary-400-hsl: 197 100% 49%;
+
+    /* * Alternate */
+    --color-alternate-400: #01448C; 
+    --color-alternate-800: #00173A; 
+    --color-alternate-900: #000E29; 
+    
+    /* * Neutral */
+    --color-neutral-100: #FFFFFF;
+    --color-neutral-100-hsl: 0 0% 100%;
+    --color-neutral-200: #EEEFEF;
+    --color-neutral-300: #E2E2E2;
+    --color-neutral-500: #525252;
+    --color-neutral-500-hsl: 0 0% 32%;
+    --color-neutral-900: #000000;
+    --color-neutral-900-hsl: 0 0% 0%;
+    
+
+    /* * Hover, etc */
+    --color-hover: #00B4FC;
+    --color-error: #E73F3F;
+    --color-success: #40BC95;
+
+}

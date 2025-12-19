@@ -1,0 +1,188 @@
+/* ******************************************** */
+/** HOME: BENEFITS
+/* ******************************************** */
+
+.c-benefits{
+    --_icon-size: 8rem;
+    --_bg-hsl: var(--color-neutral-500-hsl);
+    --_bg-op: 30%;
+    --_br: 3rem;
+    --_py: 3rem;
+    --_px: 3rem;
+    --_carrousel-pb: 5rem;
+    
+    background: var(--color-primary-900);
+    margin-top: calc(var(--section-y)*-1);
+}
+
+.c-benefits__holder{
+    position: relative;
+    z-index: 1;
+}
+
+.c-benefits__heading,
+.c-benefits__text{
+    text-align: center;
+    margin-inline: auto;
+}
+
+.c-benefits__heading{
+    --heading-max-w: 18em;
+}
+
+.c-benefits__text{
+    --text-max-w: 35em;
+}
+
+.c-benefits__carousel{
+    margin-inline: var(--wrapper-x-n);
+    width: auto;
+}
+
+.c-benefits__carousel .c-carousel__viewport{
+    padding-bottom: var(--_carrousel-pb);
+}
+
+.c-benefits__list{
+    margin-top: var(--section-y);
+    padding-left: var(--wrapper-x);
+}
+
+.c-benefits__list > li{
+    border-radius: var(--_br);
+    box-shadow: 0 2rem 5rem -1rem hsl(var(--color-neutral-900-hsl) / 25%);
+}
+
+.c-benefits-item{
+    background: hsl(var(--_bg-hsl)/var(--_bg-op));
+    border-radius: var(--_br);
+    padding: var(--_py) var(--_px) calc(var(--_py)*2.5);
+    height: 100%;
+    box-shadow: 0 1rem 1rem -.6rem hsl(var(--color-primary-400-hsl) / 80%);
+    
+}
+
+.c-benefits-item__heading{
+    padding-right: var(--_icon-size);
+}
+
+.c-benefits__icon{
+    width: var(--_icon-size);
+    height: var(--_icon-size);
+    margin-top: calc(var(--_icon-size) * -.5);
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.c-benefits-item__content{
+    --text-fz: var(--fz-200);
+    margin-top: 1.5em;
+}
+
+
+
+
+/* ********************** SHORT MOBILE ********************** */
+
+@media (max-width: 22.4375rem) { /* 359px */
+}
+
+
+
+
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) { /* 767px, 730px */
+}
+
+ 
+
+
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) { /* 500px, 767px */
+}
+
+
+
+
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) { /* 768px */
+}
+@media (min-width: 48rem) and (orientation: portrait) {
+}
+
+
+
+
+/* ********************** de Tablet a DESKTOP ********************** */
+
+@media (min-width: 61.25rem) { /* 980px */
+}
+
+
+
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+
+@media (min-width: 75rem) { /* 1200px */
+   
+    .c-benefits{
+        --_px: 4rem;
+    }
+
+}
+@media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
+}
+
+
+
+
+/* ********************** de Desktop 2 a HD ********************** */
+
+@media (min-width: 87.5rem) { /* 1400px */
+
+    .c-benefits-item__content{
+        margin-top: 2em;
+    }
+
+}
+@media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
+}
+
+
+
+
+/* ********************** de Hd a FULL HD ********************** */
+
+@media (min-width: 100rem) { /* 1600px */
+}
+
+@media (min-width: 105rem) { /* 1680px */ 
+    /* !wrapper max */
+
+    .c-benefits__carousel.c-carousel {
+        --items-gap: 25px;
+        --heading-fz: var(--fz-400);
+    }
+
+    .c-benefits-item{
+        padding: var(--_py) var(--_px) calc(var(--_py)*2);
+    }
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) { /* 1600px, 790px */
+}
+@media (min-width: 100rem) and (min-height: 56.25rem) { /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) { /* 1800px */
+
+    
+}
+@media (min-width: 112.5rem) and (min-height: 56.25rem) { /* 1800px, 900px */
+}

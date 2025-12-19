@@ -1,0 +1,176 @@
+/* ******************************************** */
+/** COMPONENTS: HEADER
+/* ******************************************** */
+
+.c-header{
+    --_brand-height: 4rem;
+    --_nav-btn: var(--tap-size);
+    
+    position: absolute;
+    height: var(--header);
+    padding-top: calc(var(--header) - var(--header-xs));
+    z-index: 100;
+}
+
+.c-header,
+.c-header__wrapper{
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.c-header__wrapper {
+    height: var(--header-xs);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: none;
+}
+
+.c-header__brand,
+.c-header__logo {
+    display: block;
+    width: auto;
+    max-width: none;
+    height: var(--_brand-height);
+}
+
+.c-header__nav {
+    display: none;
+}
+
+.c-header__toggle-nav {
+    position: absolute;
+    left: -999999px;
+}
+
+.c-header__nav-btn {
+    --_bar-color: var(--color-neutral-100);
+    --_bar-translate: -240%;
+    --_bar-w: 2.4rem;
+    --_bar-offset: calc(var(--wrapper-x) - (var(--_nav-btn) - var(--_nav-btn-bars)) / 2);
+    display: grid;
+    place-items: center;
+    width: var(--_nav-btn);
+    height: var(--_nav-btn);
+    position: relative;
+}
+
+.c-header__nav-btn::before,
+.c-header__nav-btn::after {
+    content: "";
+    display: block;
+    width: var(--_bar-w);
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: var(--_bar-color);
+    transform: translate(-50%, -50%);
+    translate: 0 var(--_bar-translate);
+    rotate: var(--_bar-rotate, 0deg);
+}
+
+.c-header__nav-btn::before,
+.c-header__nav-btn::after {
+    transform-origin: left top;
+    transition: translate var(--_dur) 
+ease-out, scale var(--_dur) 
+ease-out, rotate var(--_dur) 
+ease-out;
+    transition-delay: 400ms, 200ms, 0ms;
+}
+
+.c-header__nav-btn::after {
+    --_bar-translate: 240%;
+}
+
+
+/* ********************** SHORT MOBILE ********************** */
+
+@media (max-width: 22.4375rem) { /* 359px */
+}
+
+
+
+
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) { /* 767px, 730px */
+}
+
+ 
+
+
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) { /* 500px, 767px */
+}
+
+
+
+
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) { /* 768px */
+}
+@media (min-width: 48rem) and (orientation: portrait) {
+}
+
+
+
+
+/* ********************** de Tablet a DESKTOP ********************** */
+
+@media (min-width: 61.25rem) { /* 980px */
+}
+
+
+
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+
+@media (min-width: 75rem) { /* 1200px */
+
+    .c-header__nav {
+        display: block;
+    }
+
+    .c-header__nav-btn{
+        display: none;
+    }
+    
+}
+@media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
+}
+
+
+
+
+/* ********************** de Desktop 2 a HD ********************** */
+
+@media (min-width: 87.5rem) { /* 1400px */
+}
+@media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
+}
+
+
+
+
+/* ********************** de Hd a FULL HD ********************** */
+
+@media (min-width: 100rem) { /* 1600px */
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) { /* 1600px, 790px */
+}
+@media (min-width: 100rem) and (min-height: 56.25rem) { /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) { /* 1800px */
+}
+@media (min-width: 112.5rem) and (min-height: 56.25rem) { /* 1800px, 900px */
+}
