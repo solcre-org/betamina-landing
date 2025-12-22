@@ -12,29 +12,29 @@
     background-position: center;
 }
 
-.c-icon--check{
+.u-icon--check{
     background-image: url(/assets/icons/icon-check.svg);
 }
 
-.c-icon--statistics{
+.u-icon--statistics{
     background-image: url(/assets/icons/icon-statistics.svg);
 }
 
-.c-icon--commissions{
+.u-icon--commissions{
     background-image: url(/assets/icons/icon-commissions.svg);
 }
 
-.c-icon--promotion{
+.u-icon--promotion{
     background-image: url(/assets/icons/icon-promotion.svg);
 }
 
-.c-icon--arrow-right{
+.u-icon--arrow-right{
     background-image: url(/assets/icons/icon-arrow-right.svg);
 }
 
 /* blue */
 
-.c-icon--check-blue{
+.u-icon--check-blue{
     background-image: url(/assets/icons/icon-check-blue.svg);
 }
 

@@ -1,0 +1,154 @@
+/* ******************************************** */
+/** HOME: ADVANTAGES
+/* ******************************************** */
+
+.c-advantages{
+    --_items-gap: calc(var(--separator-y)*.8);
+    --_icon-size: calc(var(--fz-600)*1.2);
+}
+
+.c-advantages__list{
+    margin-top: calc(var(--separator-y)*.8);
+}
+
+.c-advantages__title{
+    --heading-fz: calc(var(--fz-600)*1.2);
+}
+
+.c-advantage{
+    --heading-fz: var(--fz-400);
+    --text-fz: var(--fz-200);
+    text-align: left;
+}
+
+.c-advantages__icon{
+    width: var(--_icon-size);
+    height: auto;
+}
+
+.c-advantages__icon + .c-advantage__heading{
+    margin-top: .8em;
+}
+
+.c-advantage__text{
+    margin-top: .8em;
+}
+
+
+/* ********************** ONLY MOBILE ********************** */
+
+@media (max-width: 47.9375rem) /* up to 767px */ { 
+
+     .c-advantages__item:not(:first-child){
+        margin-top: var(--_items-gap);
+     }
+
+}
+
+/* ********************** SHORT MOBILE ********************** */
+
+@media (max-width: 22.4375rem) { /* 359px */
+}
+
+
+
+
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) { /* 767px, 730px */
+}
+
+ 
+
+
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) { /* 500px, 767px */
+}
+
+
+
+
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) { /* 768px */
+
+    .c-advantages{
+        --_items-gap: calc(var(--separator-y)*.5) calc(var(--separator-y)*.8);
+    }
+
+    .c-advantages__list{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: var(--_items-gap);
+    }
+
+    .c-advantages__list.has-odd-items .c-advantages__item:nth-of-type(n+4){
+        transform: translateX(50%);
+    }
+
+    .c-advantages__item{
+        grid-column: span 2;
+    }
+    
+}
+@media (min-width: 48rem) and (orientation: portrait) {
+}
+
+
+
+
+/* ********************** de Tablet a DESKTOP ********************** */
+
+@media (min-width: 61.25rem) { /* 980px */
+
+    .c-advantage__heading{
+        max-width: var(--heading-max-w,none);
+    }
+
+    .c-advantage__text{
+        max-width: var(--text-max-w,none);
+    }
+}
+
+
+
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+
+@media (min-width: 75rem) { /* 1200px */
+}
+@media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
+}
+
+
+
+
+/* ********************** de Desktop 2 a HD ********************** */
+
+@media (min-width: 87.5rem) { /* 1400px */
+
+}
+@media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
+}
+
+
+
+
+/* ********************** de Hd a FULL HD ********************** */
+
+@media (min-width: 100rem) { /* 1600px */
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) { /* 1600px, 790px */
+}
+@media (min-width: 100rem) and (min-height: 56.25rem) { /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) { /* 1800px */
+}
+@media (min-width: 112.5rem) and (min-height: 56.25rem) { /* 1800px, 900px */
+}

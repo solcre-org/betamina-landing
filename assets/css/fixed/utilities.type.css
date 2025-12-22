@@ -76,8 +76,15 @@
     margin-top: .6em;
 }
 
-.u-text--has-checks ul li .c-icon{
-    margin-top: .2em;
+.u-text--has-checks ul li::before{
+    content: "";
+    width: 1.1em;
+    min-width: 1.1em;
+    height: 1.1em;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/assets/icons/icon-check-blue.svg);
 }
 
 .u-heading + .u-text{
