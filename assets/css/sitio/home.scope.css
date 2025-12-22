@@ -11,10 +11,28 @@
     --_country-br: 0.75em;
     --_country-padd: .7em;
 
+    position: relative;
+    isolation: isolate;
     background: linear-gradient(180deg, var(--color-primary-600), var(--color-primary-900));
     text-align: center;
+    overflow: hidden;
 }
 
+.c-scope::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    background-image: url(/assets/images/static/scope/scope-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: -1;
+}
 
 .c-scope__heading,
 .c-scope__text{
@@ -64,6 +82,19 @@
 
     .c-scope__countries.has-odd-items li:last-of-type{
         transform: translateX(50%);
+    }
+
+}
+
+/* ********************** MOBILE & TABLET ********************** */
+
+@media (max-width: 61.1875rem) /* up to 979px */ { 
+
+     .c-scope::before{
+        top: 5%;
+        width: 300vw;
+        height: 300vw;
+        max-height: 80%;
     }
 
 }

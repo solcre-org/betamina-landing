@@ -4,9 +4,13 @@
 
 /* Generic */
 @import url(sitio/components.carousel.css);
+@import url(sitio/components.tabs.css);
 
 /* Page */
 @import url(sitio/home.benefits.css);
 @import url(sitio/home.steps.css);
 @import url(sitio/home.commissions.css);
 @import url(sitio/home.scope.css);
+@import url(sitio/home.advantages.css);
+@import url(sitio/home.tools.css);
+@import url(sitio/home.faqs.css);

@@ -5,12 +5,13 @@
 .c-commissions {
     --_cards-gap: 3rem;
     --_py: 4rem;
-    --_px: 3rem;
+    --_px: 2rem;
     --_br: 3rem;
     --_type-fz: var(--fz-300);
     --_value-fz: var(--fz-400);
     --_value-color: hsl(from hsl(var(--color-secondary-400-hsl)) h 90% l);
     background: linear-gradient(180deg, var(--color-primary-400), var(--color-primary-600));
+    padding-bottom: 2rem;
 }
 
 .c-commissions__deco-img {
@@ -143,6 +144,10 @@
 
 @media (min-width: 48rem) {
     /* 768px */
+
+    .c-commissions {
+        --_px: 3rem;
+    }
 
     .c-commissions__top {
         display: grid;
