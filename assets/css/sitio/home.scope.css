@@ -15,6 +15,20 @@
     text-align: center;
 }
 
+
+.c-scope__heading,
+.c-scope__text{
+    margin-inline: auto;
+}
+
+.c-scope__heading{
+    --heading-max-w: 15em;
+}
+
+.c-scope__text{
+    --text-max-w: 26em;
+}
+
 .c-scope__countries {
     overflow: hidden;
     display: grid;
@@ -123,6 +137,9 @@
 
     .c-scope__countries {
         grid-template-columns: repeat(5,1fr);
+        max-width: 144rem;
+        margin-inline: auto;
+        overflow: initial;
     }
 
     .c-country:nth-of-type(-n+5),
@@ -135,9 +152,8 @@
         margin-left: var(--separator-x-n);
         margin-right: var(--separator-x);
     }
-    
-}
 
+}
 
 
 
