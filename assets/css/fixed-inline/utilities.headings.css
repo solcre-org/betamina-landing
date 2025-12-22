@@ -16,7 +16,7 @@
 */
 
 .u-heading{
-    --_fz: var(--fz-700);
+    --_fz: var(--fz-800);
     --_ff: var(--font-alt);
     --_lh: 1;
     --_fw: 700;

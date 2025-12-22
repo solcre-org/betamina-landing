@@ -59,11 +59,11 @@
 }
 
 .c-carousel__btn.c-carousel__btn--prev { 
-    left: var(--space-x); 
+    left: var(--separator-x); 
     transform: translateY(-50%) rotate(180deg);
 }
 .c-carousel__btn.c-carousel__btn--next { 
-    right: var(--space-x); 
+    right: var(--separator-x); 
 }
 
 
@@ -73,7 +73,7 @@
     display: flex;
     justify-content: center;
     gap: var(--dot-gap);
-    margin-top: calc(var(--section-y)*.5);
+    margin-top: calc(var(--separator-y)*.5);
 }
 
 .c-carousel__dot {
@@ -109,6 +109,19 @@
     transform: translate(-50%,-50%) scale3d(2.5,2.5,2.5);
 }
 
+
+/* ********************** ONLY MOBILE ********************** */
+
+@media (max-width: 47.9375rem) /* up to 767px */ { 
+
+     .c-carousel__btn.c-carousel__btn--prev { 
+        left: 0; 
+    }
+    .c-carousel__btn.c-carousel__btn--next { 
+        right: 0; 
+    }
+
+}
 
 
 
@@ -163,10 +176,10 @@
     }
 
     .c-carousel__btn.c-carousel__btn--prev { 
-        left: calc(var(--space-x)*.5); 
+        left: calc(var(--separator-x)*.5); 
     }
     .c-carousel__btn.c-carousel__btn--next { 
-        right: calc(var(--space-x)*.5); 
+        right: calc(var(--separator-x)*.5); 
     }
 
 }

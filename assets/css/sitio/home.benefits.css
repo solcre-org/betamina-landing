@@ -12,7 +12,7 @@
     --_carrousel-pb: 5rem;
     
     background: var(--color-primary-900);
-    margin-top: calc(var(--section-y)*-1);
+    margin-top: calc(var(--separator-y)*-1);
 }
 
 .c-benefits__holder{
@@ -44,7 +44,7 @@
 }
 
 .c-benefits__list{
-    margin-top: var(--section-y);
+    margin-top: var(--separator-y);
     padding-left: var(--wrapper-x);
 }
 

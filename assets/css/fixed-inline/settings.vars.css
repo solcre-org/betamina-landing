@@ -7,9 +7,9 @@
     --font-alt: 'FT Calhern Wide Betamina', sans-serif;
     
     /* Sizes */
-    --space-x: 1.6rem;
-    --space-x-n: calc(var(--space-x) * -1);
-    --separator: 4rem;
+    --separator-x: 1.8rem;
+    --separator-x-n: calc(var(--separator-x) * -1);
+    --separator-y: 5rem;
     
     --wrapper: 168rem;
     --wrapper-xs: 144rem;
@@ -18,7 +18,7 @@
     --header: 7.6rem;
     --header-xs: 6.4rem;
 
-    --wrapper-x: var(--space-x);
+    --wrapper-x: var(--separator-x);
     --wrapper-x-n: calc(var(--wrapper-x) * -1);
 
     --sections-br: 3rem;
@@ -36,35 +36,24 @@
 
 
 
-
-
-/* ********************** SHORT MOBILE ********************** */
-
-@media (max-width: 22.4375rem) { /* 359px */
-
-
-}
-
-
-
-
-
-/* ********************** WIDE MOBILE ********************** */
-
-@media (orientation: portrait) and (min-width: 25rem) and (max-width: 47.9375rem) { /* 400px, 767px */
-}
-
-
-
-
-
 /* ********************** TALL MOBILE PORTRAIT ********************** */
 
 @media (max-width: 47.9375rem) and (min-height: 45.625rem){ /* 767px, 730px */
+    
+    :root{
+        --separator-y: 6rem;
+    }
+
 }
 
- 
 
+ /* Big mobile */
+
+@media (min-width: 24.375rem) { /* 768px */
+    :root{
+        --separator-x: 2.2rem;
+    }
+}
 
 
 /* ********************** MOBILE LANDSCAPE ********************** */
@@ -84,7 +73,8 @@
 @media (min-width: 48rem) { /* 768px */
     
     :root {
-        --space-x: 2rem;
+        --separator-x: 2rem;
+        --separator-y: 8rem;
     }
 
 }
@@ -102,7 +92,7 @@
 @media (min-width: 61.25rem) { /* 980px */
     
     :root {
-        --space-x: 3.6rem;
+        --separator-x: 3.6rem;
     }
     
 }
@@ -117,14 +107,16 @@
 @media (min-width: 75rem) { /* 1200px */
 
     :root {
-        --space-x: 4.5rem;
+        --separator-x: 4.5rem;
     }
 }
 @media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
-
+    
+    :root{
+        --separator-y: clamp( 8rem, 15vh, 14rem);
+    }
 
 }
-
 
 
 
@@ -134,8 +126,8 @@
 
     :root{
         --header: 10rem;
-        --space-x: 6rem;
-        --wrapper-x: clamp(var(--space-x),4.86vw,7.5rem);
+        --separator-x: 6rem;
+        --wrapper-x: clamp(var(--separator-x),4.86vw,7.5rem);
         --sections-br: 5rem;
     }
 

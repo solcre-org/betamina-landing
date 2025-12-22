@@ -28,6 +28,7 @@
     border-radius: 2em;
     padding: var(--btn-py, var(--_py)) var(--btn-px, var(--_px));
     box-shadow: 0 1.3em 1.3em -1em hsl(var(--color-neutral-900-hsl) / 25%);
+    min-height: 4.4rem;
 }
 
 .c-btn--stroke{

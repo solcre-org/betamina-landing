@@ -1,0 +1,197 @@
+/* ******************************************** */
+/** HOME: SCOPE
+/* ******************************************** */
+
+.c-scope {
+    --_countries-gap-y: 1rem;
+    --_countries-gap-x: 1rem;
+    --_country-fz: var(--fz-300);
+    --_country-flag-size: 3rem;
+    --_country-color: var(--color-primary-900);
+    --_country-br: 0.75em;
+    --_country-padd: .7em;
+
+    background: linear-gradient(180deg, var(--color-primary-600), var(--color-primary-900));
+    text-align: center;
+}
+
+.c-scope__countries {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: calc(var(--separator-y)*.6);
+    gap: var(--_countries-gap-y) var(--_countries-gap-x);
+}
+
+
+/* COUNTRY */
+.c-country {
+    display: flex;
+    font-size: var(--_country-fz);
+    color: var(--_country-color);
+    background-color: var(--color-neutral-100);
+    border-radius: var(--_country-br);
+    padding: var(--_country-padd);
+    align-items: center;
+    gap: 0.7em;
+    text-align: left;
+    line-height: 1;
+}
+
+.c-country__flag {
+    width: var(--_country-flag-size);
+    min-width: var(--_country-flag-size);
+    height: var(--_country-flag-size);
+}
+
+/* ********************** ONLY MOBILE ********************** */
+
+@media (max-width: 47.9375rem) /* up to 767px */ { 
+
+    .c-scope__countries.has-odd-items li:last-of-type{
+        transform: translateX(50%);
+    }
+
+}
+
+
+/* ********************** MOBILE & TABLET ********************** */
+
+@media (max-width: 61.1875rem)
+/* up to 979px */
+    {
+
+    .c-scope__countries {
+        margin-inline: var(--wrapper-x);
+    }
+    
+
+}
+
+
+
+
+/* ********************** SHORT MOBILE ********************** */
+
+@media (max-width: 22.4375rem) {
+    /* 359px */
+}
+
+
+
+
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) {
+    /* 767px, 730px */
+}
+
+
+
+
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) {
+    /* 500px, 767px */
+}
+
+
+
+
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) {
+    /* 768px */
+
+    .c-scope__countries {
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media (min-width: 48rem) and (orientation: portrait) {}
+
+
+
+
+/* ********************** de Tablet a DESKTOP ********************** */
+
+@media (min-width: 61.25rem) {
+    /* 980px */
+
+    .c-scope__countries {
+        grid-template-columns: repeat(5,1fr);
+    }
+
+    .c-country:nth-of-type(-n+5),
+    .c-country:nth-of-type(n+11) {
+        margin-left: var(--separator-x);
+        margin-right: var(--separator-x-n);
+    }
+
+    .c-country:nth-of-type(n+6):nth-of-type(-n+10) {
+        margin-left: var(--separator-x-n);
+        margin-right: var(--separator-x);
+    }
+    
+}
+
+
+
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+
+@media (min-width: 75rem) {
+    /* 1200px */
+}
+
+@media (min-width: 75rem) and (min-height: 45rem) {
+    /* 1200, 720 */
+}
+
+
+
+
+/* ********************** de Desktop 2 a HD ********************** */
+
+@media (min-width: 87.5rem) {
+    /* 1400px */
+
+    .c-scope {
+        --_countries-gap-y: 3rem;
+        --_countries-gap-x: 2rem;
+        --_country-fz: var(--fz-400);
+        --_country-flag-size: 4rem;
+    }
+}
+
+@media (min-width: 87.5rem) and (min-height: 49.375rem) {
+    /* 1400px, 790px */
+}
+
+
+
+
+/* ********************** de Hd a FULL HD ********************** */
+
+@media (min-width: 100rem) {
+    /* 1600px */
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) {
+    /* 1600px, 790px */
+}
+
+@media (min-width: 100rem) and (min-height: 56.25rem) {
+    /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) {
+    /* 1800px */
+}
+
+@media (min-width: 112.5rem) and (min-height: 56.25rem) {
+    /* 1800px, 900px */
+}
