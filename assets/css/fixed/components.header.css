@@ -37,7 +37,7 @@
 
 .is-fixed .c-header__wrapper {
     position: fixed;
-    background: hsl(var(--color-neutral-900-hsl)/30%);
+    background: hsl(var(--color-primary-900-hsl)/80%);
     backdrop-filter: blur(10px);
     transition: background 300ms ease-out, backdrop-filter 300ms ease-out;
 }
