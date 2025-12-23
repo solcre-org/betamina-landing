@@ -3,8 +3,22 @@
 /* ******************************************** */
 
 .c-faqs-section{
+    position: relative;
     background-color: var(--color-primary-100);
     margin-top: calc(var(--sections-br)*-1);
+    border-radius: 0 0 var(--sections-br) var(--sections-br);
+}
+
+.c-faqs-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary-900);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .c-faqs-section__wrapper{

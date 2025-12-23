@@ -4,6 +4,46 @@
 
 .c-registration{
     background: linear-gradient(180deg, var(--color-primary-900), var(--color-primary-400));
+    overflow: hidden;
+}
+
+.c-registration__holder{
+    position: relative;
+    isolation: isolate;
+}
+
+.c-registration__holder::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    bottom: 0;
+    width: 200vw;
+    height: 200vw;
+    background-image: url(/assets/images/static/form/form-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.c-registration__holder::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    top: 0;
+    width: 150vw;
+    height: 150vw;
+    background-image: url(/assets/images/static/form/form-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: -1;
+    opacity: .2;
+    mix-blend-mode: screen;
 }
 
 .c-registration__heading {
@@ -12,13 +52,24 @@
     gap: .3em .4em;
 }
 
+.c-registration__heading img {
+    height: 1.1em;
+    width: auto;
+    margin-top: -0.05em;
+}
+
 .c-registration__form{
     --heading-color: var(--color-primary-900);
     --text-color: hsl(var(--color-primary-900-hsl)/85%);
 
     background-color: var(--color-neutral-100);
-    border-radius: 1.8rem;
-    padding: 3.5rem 3rem 4rem;
+    border-radius: var(--sections-br);
+    padding: 4.2rem 3rem 4rem;
+}
+
+.c-registration-form__form{
+    position: relative;
+    z-index: 1;
 }
 
 .c-registration-form__heading + .c-form,
@@ -30,7 +81,12 @@
     margin-top: 1em;
 }
 
+/* CLOSING */
 
+.c-closing-img {
+    max-height: 80vh;
+    overflow: hidden;
+}
 
 /* ********************** ONLY MOBILE ********************** */
 
@@ -70,10 +126,54 @@
 
 
 
+@media (min-width: 48rem) and (max-width: 74.9375rem) /* 768px to 1199px */ { 
+
+    .c-registration__left{
+        padding-top: var(--separator-y);
+    }
+         
+}
 
 /* ********************** de Mobile a TABLET ********************** */
 
 @media (min-width: 48rem) { /* 768px */
+
+    .c-registration__holder::before {
+        content: "";
+        position: absolute;
+        left: auto;
+        right: 0;
+        transform: translate(20%, 40%);
+        width: 100vw;
+        height: 100vw;
+    }
+
+    .c-registration__holder::after {
+        left: 0%;
+        bottom: 0;
+        top: auto;
+        width: 60vw;
+        height: 60vw;
+        transform: translate(-10%, 30%);
+        opacity: .12;
+    }
+
+    :root .c-registration__text{
+        --text-max-w: 22em;
+        margin-top: 2em;
+    }
+
+    .c-registration__wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--separator-x);
+    }
+
+    .c-registration-form__heading + .c-form,
+    .c-registration-form__text + .c-form {
+        margin-top: 3rem;
+    }
+    
 }
 @media (min-width: 48rem) and (orientation: portrait) {
 }
@@ -84,6 +184,12 @@
 /* ********************** de Tablet a DESKTOP ********************** */
 
 @media (min-width: 61.25rem) { /* 980px */
+
+    .c-registration__holder::after {
+        transform: translate(0, 60%);
+        width: 50vw;
+        height: 50vw;
+    }
 }
 
 
@@ -92,6 +198,19 @@
 /* ********************** de Desktop a DESKTOP 2 ********************** */
 
 @media (min-width: 75rem) { /* 1200px */
+
+    .c-registration__wrapper {
+        align-items: center;
+        gap: calc(var(--separator-x)*2);
+    }
+
+    .c-registration__left{
+        height: max-content;
+    }
+
+    .c-registration__form{
+        padding: 5.2rem 5rem;
+    }
 }
 @media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
 }
@@ -102,6 +221,11 @@
 /* ********************** de Desktop 2 a HD ********************** */
 
 @media (min-width: 87.5rem) { /* 1400px */
+    
+    .c-registration-form__heading + .c-form,
+    .c-registration-form__text + .c-form {
+        margin-top: 4.4rem;
+    }
 }
 @media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
 }

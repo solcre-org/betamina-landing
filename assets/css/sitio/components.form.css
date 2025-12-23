@@ -17,12 +17,39 @@
     gap: var(--_inputs-gap);
 }
 
+.c-form__group{
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+}
+
+.c-form__group > *{
+    height: -webkit-fill-available;
+}
+
 .c-form__label{
+    position: relative;
     display: block;
     background-color: var(--_input-bg);
     border-radius: var(--_input-br);
     font-size: var(--_input-fz);
     padding: var(--_input-py) var(--_input-px);
+    overflow: hidden;
+}
+
+.c-form__label--phone{
+    display: flex;
+    gap: .3em;
+}
+
+.c-form__label--phone label{
+    display: block;
+    overflow: hidden;
+}
+
+.c-form__label input{
+    width: -webkit-fill-available;
 }
 
 .c-form__label input::placeholder {
@@ -31,6 +58,11 @@
 
 .c-form__label--textarea{
     border-radius: calc(var(--_input-br)*.8);
+    min-height: 12rem;
+}
+
+.c-form__btn{
+    margin-top: .5rem;
 }
 
 
@@ -39,8 +71,6 @@
 
 @media (max-width: 22.4375rem) { /* 359px */
 }
-
-
 
 
 

@@ -669,98 +669,239 @@
 
         <!-- ! FORM : Start -->
         <section class="c-registration o-section">
-            <div class="c-registration__wrapper o-wrapper">
-                <h2 class="c-registration__heading u-heading">Unite al Programa de Afiliados <img
-                        src="/assets/images/static/logo.svg" alt="" width="180" height="40"></h2>
-                <p class="c-registration__text u-text">Monetizá tu tráfico con uno de los programas de iGaming más
-                    competitivos de LATAM.</p>
-
-                <div class="c-registration__form c-registration-form">
-                    <h3 class="c-registration-form__heading u-heading-xs">Unite ahora</h3>
-                    <p class="c-registration-form__text u-text">Ingresá tus datos para formar parte del Programa de Afilliados
-                        Betamina.</p>
-                    <form class="c-form" action="">
-                        <label class="c-form__label" for="name">
-                            <input class="js-form__input" name="name" type="text" placeholder="Nombre completo" required="">
-                        </label>
-                        <label class="c-form__label" for="email">
-                            <input class="js-form__input" name="email" type="email" placeholder="Correo electrónico" required="">
-                        </label>
-                        <div class="c-form__group js-phone-input">
-                            <!-- ! DIALCODE: Start -->
-                            <div class="c-dialcode js-dialcode">
-                                <button type="button" class="c-dialcode__label js-showDialcode">
-                                    <span class="c-dialcode__label-content">
-                                        <img class="c-dialcode__flag" src="/assets/images/static/flags/225-uruguay.svg"
-                                            alt="">
-                                    </span>
-                                    <span class="c-dialcode__arrow u-icon u-icon--arrow-down"></span>
-                                </button>
-                                <ul class="c-dialcode__list">
-                                    <li class="c-dialcode__item">
-                                        <button type="button" class="js-dialcodeOption" data-prefix="+54">
-                                            <span class="c-dialcode__flag">
-                                                <img src="/assets/images/static/flags/199-argentina.svg" alt="">
-                                            </span>
-                                        </button>
-                                    </li>
-                                    <li class="c-dialcode__item">
-                                        <button type="button" class="js-dialcodeOption" data-prefix="+55">
-                                            <span class="c-dialcode__flag">
-                                                <img src="/assets/images/static/flags/022-brazil.svg" alt="">
-                                            </span>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- ! DIALCODE: End -->
-                            <label class="c-form__label" for="phone">
-                                <input class="js-form__input" name="phone" type="text" placeholder="--- --- ----" required="">
+            <div class="c-registration__holder">
+                <div class="c-registration__wrapper o-wrapper">
+                    <div class="c-registration__left">
+                        <h2 class="c-registration__heading u-heading">Unite al Programa de Afiliados <img
+                                src="/assets/images/static/logo.svg" alt="" width="180" height="40"></h2>
+                        <p class="c-registration__text u-text">Monetizá tu tráfico con uno de los programas de iGaming
+                            más
+                            competitivos de LATAM.</p>
+                    </div>
+                    <div class="c-registration__form c-registration-form">
+                        <h3 class="c-registration-form__heading u-heading-xs">Unite ahora</h3>
+                        <p class="c-registration-form__text u-text">Ingresá tus datos para formar parte del Programa de
+                            Afilliados
+                            Betamina.</p>
+                        <form class="c-form" action="">
+                            <label class="c-form__label" for="name">
+                                <input class="js-form__input" id="name" name="name" type="text"
+                                    placeholder="Nombre completo" required="">
                             </label>
-                        </div>
-                        <div class="c-form__group js-phone-input">
-                            <!-- ! DIALCODE: Start -->
-                            <div class="c-dialcode js-dialcode">
-                                <button type="button" class="c-dialcode__label js-showDialcode">
-                                    <span class="c-dialcode__label-content">
-                                        <img class="c-dialcode__flag" src="/assets/images/static/flags/225-uruguay.svg"
-                                            alt="">
-                                    </span>
-                                    <span class="c-dialcode__arrow u-icon u-icon--arrow-down"></span>
-                                </button>
-                                <ul class="c-dialcode__list">
-                                    <li class="c-dialcode__item">
-                                        <button type="button" class="js-dialcodeOption" data-prefix="+54">
-                                            <span class="c-dialcode__flag">
-                                                <img src="/assets/images/static/flags/199-argentina.svg" alt="">
-                                            </span>
-                                        </button>
-                                    </li>
-                                    <li class="c-dialcode__item">
-                                        <button type="button" class="js-dialcodeOption" data-prefix="+55">
-                                            <span class="c-dialcode__flag">
-                                                <img src="/assets/images/static/flags/022-brazil.svg" alt="">
-                                            </span>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- ! DIALCODE: End -->
-                            <label class="c-form__label" for="phone">
-                                <input class="js-form__input" name="primary-contact-method" type="text" placeholder="--- --- ----" required="">
+                            <label class="c-form__label" for="email">
+                                <input class="js-form__input" id="email" name="email" type="email"
+                                    placeholder="Correo electrónico" required="">
                             </label>
-                        </div>
+                            <div class="c-form__group js-phone-input">
+                                <!-- ! DIALCODE: Start -->
+                                <div class="c-dialcode js-dialcode">
+                                    <button type="button" class="c-dialcode__label js-showDialcode">
+                                        <span class="c-dialcode__label-content">
+                                            <img class="c-dialcode__flag"
+                                                src="/assets/images/static/flags/225-uruguay.svg" alt="">
+                                        </span>
+                                        <span class="c-dialcode__arrow u-icon u-icon--arrow-down"></span>
+                                    </button>
+                                    <ul class="c-dialcode__list">
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+54">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/199-argentina.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
 
-                        <label class="c-form__label c-form__label--textarea"> 
-                            <textarea name="mensaje" class="c-form__input c-form__input--textarea js-form__input" minlength="20" placeholder="Mensaje"></textarea> 
-                        </label>
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+55">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/022-brazil.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
 
-                        <button type="submit" class="c-form__btn c-btn">Enviar Solicitud</button>
-                    </form>
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+57">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/201-colombia.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+506">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/131-costa rica.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+593">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/214-ecuador.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+503">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/248-el salvador.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+502">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/223-guatemala.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+504">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/236-honduras.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+52">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/033-mexico.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+505">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/249-nicaragua.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+507">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/216-panama.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+595">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/001-paraguay.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+51">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/189-peru.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+598">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/225-uruguay.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-prefix="+58">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/flags/206-venezuela.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- ! DIALCODE: End -->
+                                <div class="c-form__label c-form__label--phone">
+                                    <span class="c-dialcode__prefix js-phone-prefix">+568</span>
+                                    <label for="phone-num">
+                                        <input value="" class="js-form__input" id="phone-num" name="phone-num"
+                                            type="text" placeholder="--- --- ----" required="">
+                                    </label>
+
+                                    <input type="hidden" name="phone-num-final" class="js-phone-value">
+                                </div>
+
+                            </div>
+                            <div class="c-form__group js-phone-input">
+                                <!-- ! DIALCODE: Start -->
+                                <div class="c-dialcode js-dialcode">
+                                    <button type="button" class="c-dialcode__label js-showDialcode">
+                                        <span class="c-dialcode__label-content">
+                                            <img class="c-dialcode__flag" src="/assets/images/static/form/whatsapp.svg"
+                                                alt="">
+                                        </span>
+                                        <span class="c-dialcode__arrow u-icon u-icon--arrow-down"></span>
+                                    </button>
+                                    <ul class="c-dialcode__list">
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-value="whatsapp">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/form/whatsapp.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-value="telegram">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/form/telegram.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li class="c-dialcode__item">
+                                            <button type="button" class="js-dialcodeOption" data-value="mail">
+                                                <span class="c-dialcode__flag">
+                                                    <img src="/assets/images/static/form/mail.svg" alt="">
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- ! DIALCODE: End -->
+                                <div class="c-form__label c-form__label--phone">
+                                    <span class="c-dialcode__prefix js-phone-prefix">+568</span>
+                                    <label for="primary-contact-method">
+                                        <input value="" class="js-form__input" id="primary-contact-method"
+                                            name="primary-contact-method" type="text" placeholder="--- --- ----"
+                                            required="">
+                                    </label>
+
+                                    <input type="hidden" name="primary-contact-method-final" class="js-phone-value">
+                                </div>
+                            </div>
+
+                            <label class="c-form__label c-form__label--textarea">
+                                <textarea name="mensaje" class="c-form__input c-form__input--textarea js-form__input"
+                                    minlength="20" placeholder="Mensaje"></textarea>
+                            </label>
+
+                            <button type="submit" class="c-form__btn c-btn">Enviar Solicitud</button>
+                        </form>
+                    </div>
                 </div>
-
             </div>
+
+            <picture class="c-closing-img c-pic">
+                <img src="/assets/images/temp/home/closing/closing-img.png" alt="" width="1440" height="920">
+            </picture>
         </section>
+
+
+
         <!-- ! FORM : End -->
     </main>
 
@@ -784,7 +925,7 @@
     <script defer src="/assets/js/sitio/components.faqs.js"></script>
     <script defer src="/assets/js/sitio/components.dialcode.js"></script>
     <script defer src="/assets/js/sitio/add-has-odd-items.js"></script>
-    
+
 </body>
 
 </html>
