@@ -1,61 +1,45 @@
 /* ******************************************** */
-/** COMPONENT: TAGS
+/** HOME: REGISTRATION
 /* ******************************************** */
 
-.c-tabs{
-    --_items-gap: 1.4rem;
-    --_fz: var(--fz-200);
-    --_py: 0.6em;
-    --_px: 0.9em;
-    --_br: .75em;
-    --_bg: var(--color-primary-100);
-    --_color: var(--color-primary-900);
-    --_active-bg: var(--color-primary-900);
-    --_active-color: var(--color-primary-100);
+.c-registration{
+    background: linear-gradient(180deg, var(--color-primary-900), var(--color-primary-400));
 }
 
-.c-tabs__holder{
-    overflow: hidden;
-    overflow-x: auto;
-    padding-bottom: .5rem;
-    margin-inline: var(--wrapper-x-n);
-    padding-inline: var(--wrapper-x);
-}
-
-.c-tabs__list{
+.c-registration__heading {
     display: flex;
-    white-space: nowrap;
-    width: max-content;
+    flex-wrap: wrap;
+    gap: .3em .4em;
 }
 
-.c-tabs__item:not(:last-child){
-    margin-right: var(--_items-gap);
+.c-registration__form{
+    --heading-color: var(--color-primary-900);
+    --text-color: hsl(var(--color-primary-900-hsl)/85%);
+
+    background-color: var(--color-neutral-100);
+    border-radius: 1.8rem;
+    padding: 3.5rem 3rem 4rem;
 }
 
-.c-tabs__link{
-    display: block;
-    padding: var(--_py) var(--_px);
-    color: var(--_color);
-    background: var(--_bg);
-    font-size: var(--_fz);
-    border-radius: var(--_br);
+.c-registration-form__heading + .c-form,
+.c-registration-form__text + .c-form{
+    margin-top: calc(var(--separator-y)*.6);
 }
 
-.c-tabs__link.is-active{
-    color: var(--_active-color);
-    background: var(--_active-bg);
-    pointer-events: none;
+.c-registration-form__text{
+    margin-top: 1em;
 }
 
 
-/* ********************** MEDIA HOVER ********************** */
 
-@media (hover: hover) { 
+/* ********************** ONLY MOBILE ********************** */
 
-     .c-tabs__link:not(.is-active):hover{
-        background-color: var(--color-hover);
-        color: var(--color-neutral-100);
-     }
+@media (max-width: 47.9375rem) /* up to 767px */ { 
+
+    .c-registration__form{
+        margin-top: 4rem;
+    }
+     
 
 }
 
@@ -90,9 +74,6 @@
 /* ********************** de Mobile a TABLET ********************** */
 
 @media (min-width: 48rem) { /* 768px */
-
-    
-    
 }
 @media (min-width: 48rem) and (orientation: portrait) {
 }
@@ -103,8 +84,6 @@
 /* ********************** de Tablet a DESKTOP ********************** */
 
 @media (min-width: 61.25rem) { /* 980px */
-
-    
 }
 
 

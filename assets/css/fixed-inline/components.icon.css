@@ -2,7 +2,7 @@
 /** SETTINGS: ICONS
 /* ******************************************** */
 
-.c-icon{
+.u-icon{
     display: inline-block;
     vertical-align: middle;
     width: 1em;
@@ -30,6 +30,10 @@
 
 .u-icon--arrow-right{
     background-image: url(/assets/icons/icon-arrow-right.svg);
+}
+
+.u-icon--arrow-down{
+    background-image: url(/assets/icons/icon-arrow-down.svg);
 }
 
 /* blue */
