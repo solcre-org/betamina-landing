@@ -1,0 +1,210 @@
+/* ******************************************** */
+/** COMPONENT: DIALCODE
+/* ******************************************** */
+
+/* DIALCODE */
+.c-dialcode {
+    --_flag-size: 2rem;
+    --_gap: 0.5rem;
+    --_px: var(--_input-px);
+    --_py: var(--_input-py);
+    --_arrow-size: 1rem;
+    --_arrow-padding: 0.5rem;
+    --_dropdown-offset: 0.25rem;
+    --_dropdown-translate: -0.5rem;
+    --_transition: 0.2s ease;
+    --_transition-fast: 0.15s ease;
+
+    position: relative;
+    display: inline-block;
+}
+
+.c-dialcode__toggle {
+    display: none;
+}
+
+.c-dialcode__label {
+    --_px: 1rem;
+    --_py: 0.75rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--_py) var(--_px);
+    background: var(--color-primary-900);
+    border: .1rem solid var(--border-color);
+    border-radius: var(--_input-br);
+    cursor: pointer;
+    transition: border-color var(--_transition);
+    height: 3.8rem;
+}
+
+.c-dialcode__label:hover {
+    border-color: var(--color-neutral-700);
+}
+
+.c-dialcode__label-content {
+    display: flex;
+    align-items: center;
+    gap: var(--_gap);
+}
+
+.c-dialcode__flag {
+    width: var(--_flag-size);
+    height: var(--_flag-size);
+}
+
+.c-dialcode__flag img {
+    width: 100%;
+    height: auto;
+    max-height: var(--_flag-size);
+}
+
+.c-dialcode__arrow {
+    width: var(--_arrow-size);
+    height: var(--_arrow-size);
+    margin-left: 0.5em;
+}
+
+.c-dialcode__list {
+    --_shadow: 0 0.25rem 0.75rem rgb(var(--color-neutral-900-rgb), .2);
+
+    position: absolute;
+    top: calc(100% + var(--_dropdown-offset));
+    left: 0;
+    right: 0;
+    background: var(--color-neutral-600);
+    border: .1rem solid var(--border-color);
+    border-radius: var(--_input-br);
+    box-shadow: var(--_shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(var(--_dropdown-translate));
+    transition: all var(--_transition);
+    z-index: 10;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: max-content;
+}
+
+.c-dialcode__item {
+    list-style: none;
+}
+
+.c-dialcode__item button {
+    --_px-small: 0.75rem;
+    --_py-small: 0.5rem;
+    
+    display: flex;
+    align-items: center;
+    gap: var(--_gap-small);
+    padding: var(--_py-small) var(--_px-small);
+    color: var(--color-neutral-700);
+    text-decoration: none;
+    transition: background-color var(--_transition-fast);
+}
+
+.c-dialcode__item button:hover,
+.c-dialcode__item button:focus {
+    background-color: hsl(var(--color-primary-400-hsl)/40%);
+    outline: none;
+}
+
+.c-dialcode__flag {
+    width: var(--_flag-size);
+    height: var(--_flag-size);
+}
+
+.c-dialcode__flag img {
+    width: 100%;
+    height: auto;
+    max-height: var(--_flag-size-small);
+}
+
+.c-dialcode.is-open  .c-dialcode__label .c-dialcode__arrow {
+    transform: rotate(180deg);
+}
+
+.c-dialcode.is-open .c-dialcode__list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ********************** MEDIA HOVER ********************** */
+@media (hover: hover) {
+    .c-dialcode__item:is(:hover, :focus) {
+        background-color: hsl(var(--color-neutral-300-hsl) / .5);
+    }
+}
+
+@media (max-width: 22.4375rem) {
+    /* 359px */
+}
+
+/* ********************** SHORT MOBILE ********************** */
+@media (max-width: 22.4375rem) {
+    /* 359px */
+}
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) {
+    /* 767px, 730px */
+}
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) {
+    /* 500px, 767px */
+}
+
+/* ********************** de Mobile a TABLET ********************** */
+@media (min-width: 48rem) {
+    /* 768px */
+}
+
+@media (min-width: 48rem) and (orientation: portrait) {}
+
+/* ********************** de Tablet a DESKTOP ********************** */
+@media (min-width: 61.25rem) {
+    /* 980px */
+}
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+@media (min-width: 75rem) {
+    /* 1200px */
+}
+
+@media (min-width: 75rem) and (min-height: 45rem) {
+    /* 1200, 720 */
+}
+
+/* ********************** de Desktop 2 a HD ********************** */
+@media (min-width: 87.5rem) {
+    /* 1400px */
+}
+
+@media (min-width: 87.5rem) and (min-height: 49.375rem) {
+    /* 1400px, 790px */
+}
+
+/* ********************** de Hd a FULL HD ********************** */
+@media (min-width: 100rem) {
+    /* 1600px */
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) {
+    /* 1600px, 790px */
+}
+
+@media (min-width: 100rem) and (min-height: 56.25rem) {
+    /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) {
+    /* 1800px */
+}
+
+@media (min-width: 112.5rem) and (min-height: 56.25rem) {
+    /* 1800px, 900px */
+}

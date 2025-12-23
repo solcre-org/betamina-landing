@@ -16,6 +16,7 @@
     background: linear-gradient(180deg, var(--color-primary-600), var(--color-primary-900));
     text-align: center;
     overflow: hidden;
+    padding-bottom: calc(var(--section-y) * 1.05);
 }
 
 .c-scope::before {

@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--btn-bg, var(--_bg));
-    background: linear-gradient(45deg, var(--_bg), var(--_bg-alt));
+    background: var(--btn-bg, linear-gradient(45deg, var(--_bg), var(--_bg-alt)));
     color: var(--btn-color, var(--_color));
     border-radius: 2em;
     padding: var(--btn-py, var(--_py)) var(--btn-px, var(--_px));

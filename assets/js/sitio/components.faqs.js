@@ -5,6 +5,10 @@ function faqsInit() {
 
     if (!question || !answer) return;
 
+    if (item.classList.contains('is-open')) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+
     question.addEventListener('click', () => {
       const isOpen = item.classList.contains('is-open');
 

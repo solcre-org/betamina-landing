@@ -19,19 +19,32 @@
     --text-color: var(--color-primary-900);
 }
 
-.c-faqs-section__list{
-    margin-top: calc(var(--separator-y) * .8);
+.c-faqs-section__faqs{
+    margin-top: calc(var(--separator-y) * .6);
 }
 
 .c-faqs-hint{
+    --heading-fz: var(--fz-400);
     background-color: var(--color-primary-900);
+    padding: 3.5rem 3rem 4rem;
+    border-radius: var(--fz-300);
 }
+
+.c-faqs-hint__text{
+    margin-top: 1.2em;
+}
+
+.c-faqs-hint__cta{
+    margin-top: 2em;
+    width: 100%;
+}
+
 
 /* FAQS */
 
 .c-faqs{
-    --_px: 3rem;
-    --_py: 2.5rem;
+    --_px: 1.4em;
+    --_py: 1.3em;
     --_arrow-size: 0.6em;
     --_items-gap: 1rem;
     --_transition-delay: .4s;
@@ -57,6 +70,7 @@
     font-weight: 600;
     padding-right: calc(var(--_arrow-size) + 1em);
     transition: color var(--_transition-delay) ease;
+    cursor: pointer;
 }
 
 .c-faqs__question::before {
@@ -94,7 +108,21 @@
 }
 
 
+/* ********************** MOBILE & TABLET ********************** */
 
+@media (max-width: 61.1875rem) /* up to 979px */ { 
+
+     .c-faqs-hint{
+        margin-top: 4rem;
+     }
+
+     .c-faqs{
+        --_px: 1.3em;
+        --_py: 1.3em;
+        font-size: var(--fz-200);
+    }
+
+}
 
 
 
@@ -146,14 +174,22 @@
     .c-faqs-section__wrapper{
         display: grid;
         grid-template-columns: .8fr 1.2fr;
-        gap: var(--wrapper-x);
+        grid-template-rows: auto 1fr;
+        gap: var(--separator-x);
     }
 
     .c-faqs-section__text{
         max-width: 14em;
     }
 
+    .c-faqs-section__faqs{
+        grid-row: span 2;
+    }
+
+    /* FAQS */
+
     .c-faqs{
+        --_items-gap: 2rem;
         margin-top: 0;
     }
 }
@@ -164,6 +200,16 @@
 /* ********************** de Desktop a DESKTOP 2 ********************** */
 
 @media (min-width: 75rem) { /* 1200px */
+
+    .c-faqs-section__wrapper{
+        gap: calc(var(--separator-y) * .5) calc(var(--separator-x) * 2);
+    }
+
+    .c-faqs-hint{
+        padding: 5rem 4.2rem;
+        max-width: 44rem;
+        height: max-content;
+    }
 }
 @media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
 }
@@ -174,6 +220,16 @@
 /* ********************** de Desktop 2 a HD ********************** */
 
 @media (min-width: 87.5rem) { /* 1400px */
+
+    .c-faqs-section__wrapper{
+        grid-template-columns: 0.75fr 1.35fr;
+        gap: calc(var(--separator-y) * .5) calc(var(--separator-x) * 3);
+    }
+
+    .c-faqs{
+        --_py: 1.3em;
+    }
+
 }
 @media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
 }
