@@ -26,6 +26,10 @@
     gap: var(--_buttons-gap);
 }
 
+:root .c-nav__cta{
+    --_py: 0.6em;
+}
+
 
 /* ********************** SHORT MOBILE ********************** */
 

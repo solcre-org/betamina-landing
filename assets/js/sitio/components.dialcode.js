@@ -22,6 +22,13 @@ function dialcodeInit() {
                     if ($dialcodeShow) {
                         $dialcodeShow.addEventListener("click", (e) => {
                             e.stopPropagation();
+
+                            document.querySelectorAll('.js-dialcode.is-open').forEach(openDialcode => {
+                                if (openDialcode !== $dialcode) {
+                                    openDialcode.classList.remove('is-open');
+                                }
+                            });
+
                             $dialcode.classList.toggle("is-open");
                         });
                     }
