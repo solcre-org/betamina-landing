@@ -86,6 +86,7 @@
 .c-closing-img {
     max-height: 80vh;
     overflow: hidden;
+    padding-bottom: var(--sections-br);
 }
 
 /* ********************** ONLY MOBILE ********************** */
