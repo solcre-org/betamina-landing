@@ -9,6 +9,7 @@
     transition: transform var(--_dur) ease-out 200ms;
     transform: rotate(0deg) rotateZ(0deg);
     cursor: pointer;
+    z-index: 1;
 }
 
 .c-header__toggle-nav:checked ~ .c-header__wrapper .c-header__nav-btn {

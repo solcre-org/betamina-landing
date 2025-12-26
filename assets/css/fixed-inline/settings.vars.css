@@ -49,9 +49,9 @@
 
  /* Big mobile */
 
-@media (min-width: 24.375rem) { /* 768px */
+@media (min-width: 24.375rem) { /* 390px */
     :root{
-        --separator-x: 2.2rem;
+        --separator-x: 2.4rem;
     }
 }
 
@@ -110,13 +110,6 @@
         --separator-x: 4.5rem;
     }
 }
-@media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
-    
-    :root{
-        --separator-y: clamp( 8rem, 15vh, 14rem);
-    }
-
-}
 
 
 
@@ -128,6 +121,7 @@
         --header: 10rem;
         --separator-x: 6rem;
         --wrapper-x: clamp(var(--separator-x),4.86vw,7.5rem);
+        --separator-y: clamp( 8rem, 15vh, 14rem);
         --sections-br: 5rem;
     }
 
