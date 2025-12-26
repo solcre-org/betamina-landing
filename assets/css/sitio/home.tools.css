@@ -19,7 +19,7 @@
 }
 
 .c-tools__nav {
-    margin-block: calc(var(--separator-y) * 0.3) calc(var(--separator-y) * 0.8);
+    margin-block: calc(var(--separator-y) * 0.8);
 }
 
 .c-tools-item:not(.is-active) {
@@ -200,7 +200,7 @@
     /* 1200, 720 */
 
     .c-tools__nav {
-        margin-block: calc(var(--separator-y) * 0.2) calc(var(--separator-y) * 0.6);
+        margin-block: calc(var(--separator-y) * 0.6);
     }
 }
 
@@ -219,7 +219,7 @@
     }
 
     .c-tools__nav {
-        margin-block: calc(var(--separator-y) * 0.2) calc(var(--separator-y) * 0.5);
+        margin-block: calc(var(--separator-y) * 0.5);
     }
 }
 
