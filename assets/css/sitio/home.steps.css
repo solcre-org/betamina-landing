@@ -320,11 +320,10 @@
     /* 1400px */
 
     .c-steps {
-        --_py: 5rem;
-        --_px: 4rem;
-        --_dot-size: 2rem;
+        --_py: 4rem;
+        --_dot-size: 1.7rem;
         --_dot-shadow-max-size: 10px;
-        --_cards-gap: calc(var(--separator-x)*.8);
+        --_cards-gap: calc(var(--separator-x)*.6);
     }
 }
 

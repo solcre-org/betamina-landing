@@ -216,8 +216,12 @@
     /* 1400px */
 
     .c-commissions {
-        --_py: 6rem;
-        --_cards-gap: var(--separator-x);
+        --_py: 5rem;
+        --_cards-gap: calc(var(--separator-x)*.8);
+    }
+
+    .c-commissions__list{
+        max-width: 120rem;
     }
 
     .c-commissions__deco-img {

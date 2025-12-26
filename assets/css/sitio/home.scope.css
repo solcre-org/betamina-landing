@@ -208,6 +208,7 @@
     /* 1400px */
 
     .c-scope {
+        --_country-padd: 0.7em 0.8em;
         --_countries-gap-y: 3rem;
         --_countries-gap-x: 2rem;
         --_country-fz: var(--fz-400);

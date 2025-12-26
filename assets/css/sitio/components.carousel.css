@@ -73,7 +73,7 @@
     display: flex;
     justify-content: center;
     gap: var(--dot-gap);
-    margin-top: calc(var(--separator-y)*.5);
+    margin-top: calc(var(--separator-y)*.2);
 }
 
 .c-carousel__dot {
@@ -202,8 +202,8 @@
 @media (min-width: 87.5rem) { /* 1400px */
 
     .c-carousel {
-        --items: 2.6;
-        --items-gap: 50px;
+        --items: 2.7;
+        --items-gap: 40px;
     }
 
 }
