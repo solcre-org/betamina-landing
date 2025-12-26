@@ -115,7 +115,7 @@
 .c-hero-image__feature{
     display: flex;
     gap: .6em;
-    padding: .9em 1.1em;
+    padding: .8em 1em;
     border-radius: 1em;
     font-size: var(--fz-100);
     font-weight: 500;
@@ -256,7 +256,7 @@
     }
 
     .c-hero__picture {
-        width: 65%;
+        width: 58%;
     }
 
     .c-hero-image__feature:nth-of-type(1){

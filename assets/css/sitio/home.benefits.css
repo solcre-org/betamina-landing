@@ -7,7 +7,7 @@
     --_bg-hsl: var(--color-neutral-500-hsl);
     --_bg-op: 30%;
     --_br: 3rem;
-    --_py: 3rem;
+    --_py: 5rem;
     --_px: 3rem;
     --_carrousel-pb: 5rem;
     
@@ -54,25 +54,27 @@
 }
 
 .c-benefits-item{
+    position: relative;
     background: hsl(var(--_bg-hsl)/var(--_bg-op));
     border-radius: var(--_br);
-    padding: var(--_py) var(--_px) calc(var(--_py)*2.5);
+    padding: var(--_py) var(--_px);
     height: 100%;
     box-shadow: 0 1rem 1rem -.6rem hsl(var(--color-primary-400-hsl) / 80%);
     
 }
 
-.c-benefits-item__heading{
-    padding-right: var(--_icon-size);
-}
-
 .c-benefits__icon{
+    position: absolute;
+    right: var(--_px);
+    top: 0;
+    transform: translateY(-50%);
     width: var(--_icon-size);
     height: var(--_icon-size);
-    margin-top: calc(var(--_icon-size) * -.5);
-    margin-right: 0;
-    margin-left: auto;
 }
+
+/* .c-benefits-item__heading{
+    padding-right: calc(var(--_icon-size) + 1em);
+} */
 
 .c-benefits-item__content{
     --text-fz: var(--fz-200);
@@ -112,6 +114,11 @@
 /* ********************** de Mobile a TABLET ********************** */
 
 @media (min-width: 48rem) { /* 768px */
+
+    .c-benefits__carousel.c-carousel {
+        --heading-fz: var(--fz-600);
+    }
+
 }
 @media (min-width: 48rem) and (orientation: portrait) {
 }
@@ -122,6 +129,10 @@
 /* ********************** de Tablet a DESKTOP ********************** */
 
 @media (min-width: 61.25rem) { /* 980px */
+
+    .c-benefits__carousel.c-carousel {
+        --heading-fz: var(--fz-500);
+    }
 }
 
 
@@ -146,6 +157,11 @@
 
 @media (min-width: 87.5rem) { /* 1400px */
 
+    .c-benefits{
+        --_py: 5.8rem;
+        --_px: 4.4rem;
+    }
+
     .c-benefits-item__content{
         margin-top: 2em;
     }
@@ -167,11 +183,6 @@
 
     .c-benefits__carousel.c-carousel {
         --items-gap: 25px;
-        --heading-fz: var(--fz-400);
-    }
-
-    .c-benefits-item{
-        padding: var(--_py) var(--_px) calc(var(--_py)*2);
     }
 }
 

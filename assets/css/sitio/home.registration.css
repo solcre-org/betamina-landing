@@ -49,7 +49,7 @@
 .c-registration__heading {
     display: flex;
     flex-wrap: wrap;
-    gap: .3em .4em;
+    gap: .4em .4em;
 }
 
 .c-registration__heading img {
@@ -63,7 +63,7 @@
     --text-color: hsl(var(--color-primary-900-hsl)/85%);
 
     background-color: var(--color-neutral-100);
-    border-radius: var(--sections-br);
+    border-radius: calc(var(--sections-br)*.8);
     padding: 4.2rem 3rem 4rem;
 }
 
@@ -210,7 +210,7 @@
     }
 
     .c-registration__form{
-        padding: 5.2rem 5rem;
+        padding: 4.8rem 5rem;
     }
 }
 @media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
@@ -222,10 +222,14 @@
 /* ********************** de Desktop 2 a HD ********************** */
 
 @media (min-width: 87.5rem) { /* 1400px */
+
+    :root .c-registration__text{
+        margin-top: 3em;
+    }
     
     .c-registration-form__heading + .c-form,
     .c-registration-form__text + .c-form {
-        margin-top: 4.4rem;
+        margin-top: 4rem;
     }
 }
 @media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */

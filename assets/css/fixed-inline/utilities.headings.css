@@ -34,7 +34,7 @@
 }
 
 .u-heading-xs{
-    --_fz: var(--fz-600);
+    --_fz: var(--fz-700);
     --_ff: var(--font);
     --_lh: 1;
     --_fw: 600;

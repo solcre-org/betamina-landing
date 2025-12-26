@@ -4,7 +4,7 @@
 
 .c-advantages{
     --_items-gap: calc(var(--separator-y)*.8);
-    --_icon-size: calc(var(--fz-600)*1.2);
+    --_icon-size: calc(var(--fz-700)*1.2);
 }
 
 .c-advantages__list{
@@ -12,11 +12,11 @@
 }
 
 .c-advantages__title{
-    --heading-fz: calc(var(--fz-600)*1.2);
+    --heading-fz: calc(var(--fz-700)*1.2);
 }
 
 .c-advantage{
-    --heading-fz: var(--fz-400);
+    --heading-fz: var(--fz-500);
     --text-fz: var(--fz-200);
     text-align: left;
 }

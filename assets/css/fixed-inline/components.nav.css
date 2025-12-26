@@ -22,6 +22,7 @@
 }
 
 .c-nav__ctas{
+    --btn-fz: var(--fz-100);
     display: flex;
     gap: var(--_buttons-gap);
 }
@@ -100,7 +101,7 @@
     .c-nav{
         --_items-gap: 3rem;
         --_gap: 4.8rem;
-        --_fz: var(--fz-200);
+        /* --_fz: var(--fz-200); el del diseño */
     }
 }
 @media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
@@ -112,6 +113,14 @@
 /* ********************** de Hd a FULL HD ********************** */
 
 @media (min-width: 100rem) { /* 1600px */
+
+    .c-nav{
+        --_fz: var(--fz-200);
+    }
+
+    .c-nav__ctas{
+        --btn-fz: var(--fz-200);
+    }
 }
 
 @media (min-width: 100rem) and (min-height: 49.375rem) { /* 1600px, 790px */
