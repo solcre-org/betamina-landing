@@ -77,11 +77,15 @@
     margin-top: var(--_items-gap);
 }
 
-.c-faqs__question {
+:root .c-faqs__question {
+    display: block;
+    width: 100%;
+    text-align: left;
     position: relative;
     font-size: 1.05em;
     line-height: 1.3;
     font-weight: 600;
+    color: inherit;
     padding-right: calc(var(--_arrow-size) + 1em);
     transition: color var(--_transition-delay) ease;
     cursor: pointer;
@@ -100,12 +104,12 @@
     transition: transform var(--_transition-delay) ease;
 }
 
-.c-faqs__item.is-open>.c-faqs__question::before {
+.c-faqs__item.is-open .c-faqs__question::before {
     transform: rotate(135deg);
     transition: transform var(--_transition-delay) ease;
 }
 
-.c-faqs__item.is-open>.c-faqs__question {
+.c-faqs__item.is-open .c-faqs__question {
     color: var(--color-primary-400);
     transition: color var(--_transition-delay) ease;
 }
@@ -145,11 +149,11 @@
 
 @media (hover: hover) {
 
-    .c-faqs__item {
+    .c-faqs__question {
         transition: color 250ms ease-out;
     }
 
-    .c-faqs__item:not(.is-open):hover {
+    .c-faqs__item:not(.is-open) .c-faqs__question:hover {
         color: var(--color-hover);
     }
 

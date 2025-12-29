@@ -23,4 +23,4 @@ function faqsInit() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', faqsInit);
+window.addEventListener('load', faqsInit);
