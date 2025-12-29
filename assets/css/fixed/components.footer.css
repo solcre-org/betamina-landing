@@ -136,6 +136,27 @@
 }
 
 
+/* ********************** MEDIA HOVER ********************** */
+
+@media (hover: hover) { 
+
+    .c-footer-nav__link:hover,
+    .c-footer__dev a:hover{
+        opacity: .6;
+    }
+
+    .c-footer__follow:hover{
+        background-color: var(--color-hover);
+    }
+
+    .c-footer-contact__link:hover{
+        opacity: .6;
+        text-decoration: underline;
+        text-underline-offset: .2em;
+    }
+
+}
+
 
 /* ********************** SHORT MOBILE ********************** */
 

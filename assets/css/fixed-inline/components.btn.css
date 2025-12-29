@@ -8,6 +8,7 @@
     --_color: var(--color-neutral-100);
     --_bg: var(--color-primary-300);
     --_bg-alt: var(--color-secondary-400);
+    --_bg-hover: var(--color-hover);
     --_fz: var(--fz-200);
     --_fw: 500;
     --_px: 1.3em;
@@ -23,7 +24,9 @@
     align-items: center;
     justify-content: center;
     background-color: var(--btn-bg, var(--_bg));
-    background: var(--btn-bg, linear-gradient(45deg, var(--_bg), var(--_bg-alt)));
+    background: var(--btn-bg, linear-gradient(45deg, var(--_bg), var(--_bg-alt), var(--_bg-hover)));
+    background-size: 300% 300%;
+    background-position: 0% 50%;
     color: var(--btn-color, var(--_color));
     border-radius: 2em;
     padding: var(--btn-py, var(--_py)) var(--btn-px, var(--_px));

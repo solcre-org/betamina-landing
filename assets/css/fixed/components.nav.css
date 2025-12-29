@@ -2,7 +2,7 @@
 /** COMPONENTS: NAV
 /* ******************************************** */
 
-.c-header__toggle-nav:checked ~ .c-header__wrapper {
+body.nav-open {
     overflow: hidden;
 }
 
@@ -31,18 +31,22 @@
         transition: opacity .4s ease-out, transform .4s ease-out, visibility .4s;
         overflow: hidden;
         overflow-y: auto;
+        height: 100svh;
+        height: 100vh;
         width: 100%;
         background: linear-gradient(45deg, var(--color-primary-800), var(--color-primary-400));
-        max-width: 40rem;
     }
 
     .c-nav-overlay {
         position: fixed;
         width: 100%;
-        height: 100%;
+        height: 100svh;
+        height: 100vh;
         opacity: 0;
         left: 0;
         top: 0;
+        pointer-events: none;
+        visibility: hidden;
         background-color: hsl(var(--color-primary-900-hsl) / 70%);
         backdrop-filter: blur(1rem);
         transition: opacity .4s ease-out;
@@ -57,6 +61,8 @@
 
     .c-header__toggle-nav:checked ~ .c-header__wrapper .c-nav-overlay {
         opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
     }
 
     .c-nav>* {
@@ -117,6 +123,26 @@
         transform .4s ease-out;
     }
         
+
+}
+
+/* ********************** ONLY TABLET ********************** */
+
+@media (min-width: 48rem) and (max-width: 61.1875rem) /* 768px to 979px */ { 
+
+     .c-nav {
+        max-width: 40rem;
+    }
+
+}
+
+/* ********************** MEDIA HOVER ********************** */
+
+@media (hover: hover) { 
+
+     .c-nav__link:hover{
+        opacity: .6;
+     }
 
 }
 

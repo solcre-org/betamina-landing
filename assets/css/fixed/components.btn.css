@@ -9,7 +9,21 @@
 
 @media (hover: hover) { 
 
-   .c-btn:is(:hover,:focus){
+   .c-btn{
+      transition: background .35s ease-out, background-position .35s ease-out, transform .25s ease-out, box-shadow .25s ease-out;
+   }
+
+   .c-btn:not(.c-nav__cta):is(:hover,:focus){
+      transform: translateY(-2px);
+      box-shadow: 0 1.6em 1.6em -1em hsl(var(--color-neutral-900-hsl) / 28%);
+   }
+
+   .c-btn:not(.c-btn--stroke):is(:hover,:focus){
+     background-position: 100% 50%;
+  }
+
+   .c-btn--stroke:is(:hover,:focus){
+      --_border-color: var(--color-hover);
       background-color: var(--color-hover);
    }
 
