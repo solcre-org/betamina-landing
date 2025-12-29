@@ -132,6 +132,9 @@
     .c-footer__follow{
         margin-top: 4rem;
     }
+    .c-footer__follow--desktop{
+        display: none;
+    }
 
 }
 
@@ -198,10 +201,16 @@
 
     .c-footer-nav__list{
         flex-wrap: wrap;
+        padding-right: 4rem;
     }
 
     .c-footer-bottom__wrapper{
         justify-content: space-between;
+    }
+    
+
+    .c-footer__follow--mobile{
+        display: none;
     }
 }
 @media (min-width: 48rem) and (orientation: portrait) {
