@@ -50,6 +50,11 @@
     backdrop-filter: blur(.5em);
 }
 
+.c-carousel__btn:disabled{
+    opacity: .3 !important;
+    pointer-events: none;
+}
+
 .c-carousel__btn span{
     width: 1.5rem;
     height: 1.5rem;

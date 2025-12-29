@@ -44,6 +44,19 @@ function carouselInit() {
 
         const isStatic = () => items.length <= getItemsPerView();
 
+        const updateArrowsDisabled = () => {
+            if (!prevBtn || !nextBtn) return;
+
+            if (isStatic()) {
+                prevBtn.disabled = true;
+                nextBtn.disabled = true;
+                return;
+            }
+
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === getMaxIndex();
+        };
+
         /* CONTROLS VISIBILITY */
         const updateControlsVisibility = () => {
             const hide = isStatic();
@@ -106,6 +119,7 @@ function carouselInit() {
             if (isStatic()) {
                 track.style.transition = 'none';
                 track.style.transform = 'translateX(0px)';
+                updateArrowsDisabled();
                 return;
             }
 
@@ -113,6 +127,7 @@ function carouselInit() {
             track.style.transition = animate ? 'transform 0.4s ease' : 'none';
             track.style.transform = `translateX(${getTranslateForIndex(index)}px)`;
             setActiveDot();
+            updateArrowsDisabled();
         };
 
         /* BUTTONS */
@@ -209,6 +224,7 @@ function carouselInit() {
         updateControlsVisibility();
         buildDots();
         update(false);
+        updateArrowsDisabled();
     });
 }
 
