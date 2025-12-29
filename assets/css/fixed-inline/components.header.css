@@ -40,8 +40,10 @@
 }
 
 .c-header__toggle-nav {
-    position: absolute;
+    position: fixed;
+    top: 0;
     left: -999999px;
+    pointer-events: none;
 }
 
 .c-header__nav-btn {

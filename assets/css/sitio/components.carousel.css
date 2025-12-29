@@ -34,9 +34,6 @@
 .c-carousel__track li{
     margin-right: var(--items-gap);
 }
-.c-carousel__track li:last-child {
-    margin-right: 0;
-}
 
 /* BOTONES */
 .c-carousel__btn {
@@ -123,7 +120,16 @@
 
 }
 
+/* ********************** MEDIA HOVER ********************** */
 
+@media (hover: hover) { 
+
+     .c-carousel__btn:hover,
+     .c-carousel__dot:not(.is-active):hover{
+        background-color: var(--color-hover);
+     }
+
+}
 
 /* ********************** SHORT MOBILE ********************** */
 

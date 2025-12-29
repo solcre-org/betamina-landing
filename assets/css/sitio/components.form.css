@@ -36,6 +36,12 @@
     font-size: var(--_input-fz);
     padding: var(--_input-py) var(--_input-px);
     overflow: hidden;
+    transition: box-shadow 250ms ease-out;  
+}
+
+.c-form__label:focus-within {
+  box-shadow: 0 0 0 3px var(--color-primary-300);
+  transition: box-shadow 250ms ease-out;
 }
 
 .c-form__label--phone{
