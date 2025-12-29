@@ -195,7 +195,7 @@
          transform: translateX(calc(var(--wrapper-x-n) * .5));
     }
 
-    .c-hero__tech {
+    .c-hero__tech--mobile {
         display: block;
         max-width: 17em;
         font-size: var(--fz-300);
