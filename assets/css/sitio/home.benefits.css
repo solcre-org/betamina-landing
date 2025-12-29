@@ -9,7 +9,7 @@
     --_br: 3rem;
     --_py: 5rem;
     --_px: 3rem;
-    --_carrousel-pb: 5rem;
+    --_carrousel-pb: 3rem;
     
     background: var(--color-primary-900);
     margin-top: calc(var(--separator-y)*-1);
@@ -82,6 +82,16 @@
 }
 
 
+/* ********************** ONLY MOBILE ********************** */
+
+@media (max-width: 47.9375rem) /* up to 767px */ { 
+
+    .c-benefits{
+        padding-bottom: calc(var(--section-y)*1.5);
+    }
+
+}
+
 
 
 /* ********************** SHORT MOBILE ********************** */
@@ -114,6 +124,10 @@
 /* ********************** de Mobile a TABLET ********************** */
 
 @media (min-width: 48rem) { /* 768px */
+
+    .c-benefits{
+        --_carrousel-pb: 5rem;
+    }
 
     .c-benefits__carousel.c-carousel {
         --heading-fz: var(--fz-600);
