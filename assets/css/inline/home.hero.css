@@ -23,13 +23,13 @@
     transform: translateX(-50%);
     top: 0;
     opacity: .08;
-    height: 60%;
+    height: 70%;
     z-index: -1;
 }
 
 .c-hero__bg img{
     object-fit: contain;
-    object-position: center 20%;
+    object-position: center 30%;
     width: 100%;
     height: 100%;
 }
