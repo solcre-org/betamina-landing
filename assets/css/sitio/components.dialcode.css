@@ -17,7 +17,6 @@
 
     position: relative;
     display: inline-block;
-    height: -webkit-fill-available;
 }
 
 .c-dialcode__toggle {
@@ -25,9 +24,7 @@
 }
 
 .c-dialcode__label {
-    --_px: 1.6rem;
-    --_py: 1rem;
-    
+    font-size: var(--_input-fz);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,7 +67,7 @@
 .c-dialcode__arrow {
     width: var(--_arrow-size);
     height: var(--_arrow-size);
-    margin-left: 1em;
+    margin-left: .6em;
 }
 
 .c-dialcode__list {
