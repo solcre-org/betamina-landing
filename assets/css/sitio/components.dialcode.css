@@ -17,6 +17,7 @@
 
     position: relative;
     display: inline-block;
+    height: -webkit-fill-available;
 }
 
 .c-dialcode__toggle {
