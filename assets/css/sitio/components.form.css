@@ -24,10 +24,6 @@
     align-items: center;
 }
 
-.c-form__group > *{
-    height: -webkit-fill-available;
-}
-
 .c-form__label{
     position: relative;
     display: block;
