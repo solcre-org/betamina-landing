@@ -113,7 +113,6 @@
         padding-block: var(--_item-py);
         padding-inline: var(--_item-px);
         border-radius: var(--_br);
-        min-width: 23rem;
     }
 
     .c-timer__number {
@@ -142,6 +141,10 @@
 @media (min-width: 87.5rem) {
     /* 1400px */
 
+    .c-timer__item {
+        min-width: 23rem;
+    }
+
 }
 
 @media (min-width: 87.5rem) and (min-height: 49.375rem) {
@@ -166,6 +169,7 @@
 }
 
 @media (min-width: 112.5rem) {
+
     /* 1800px */
     .c-timer__number {
         font-size: 9rem;

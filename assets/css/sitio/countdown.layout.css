@@ -16,6 +16,7 @@
 
 .c-layout__brand {
     display: block;
+    margin-top: calc(var(--section-y) / 1.5);
     margin-inline: auto;
     text-align: center;
     position: relative;
@@ -46,7 +47,7 @@
 
 .c-layout::after {
     --_img-size: 150vw;
-    
+
     content: "";
     position: absolute;
     left: 50%;
@@ -64,15 +65,15 @@
     mix-blend-mode: screen;
 }
 
-.c-layout__pic{
+.c-layout__pic {
     position: absolute;
-    bottom: -16rem;
+    bottom: -20rem;
     left: 12rem;
     transform: translate(-50%, 0);
     z-index: 2;
 }
 
-.c-layout__pic img{
+.c-layout__pic img {
     max-width: 60rem;
 }
 
@@ -111,6 +112,15 @@
 
 @media (min-width: 48rem) {
     /* 768px */
+
+    .c-layout__pic {
+        bottom: -26rem;
+    }
+
+    .c-layout__pic img {
+        max-width: 32rem;
+    }
+
 }
 
 @media (min-width: 48rem) and (orientation: portrait) {}
@@ -123,19 +133,19 @@
 @media (min-width: 61.25rem) {
     /* 980px */
 
-    .c-layout__brand-logo svg{
-        height: calc(var(--_brand-logo-size) * 1.7);
+    .c-layout__brand-logo svg {
+        height: calc(var(--_brand-logo-size) * 1.2);
     }
 
-    .c-layout::after{
+    .c-layout::after {
         --_img-size: 52vw;
     }
 
-    .c-layout__pic{
+    .c-layout__pic {
         bottom: -32rem;
         left: 15rem;
     }
-    
+
 
 }
 
@@ -154,10 +164,20 @@
 /* ********************** de Desktop 2 a HD ********************** */
 
 @media (min-width: 87.5rem) {
+
     /* 1400px */
-    .c-layout__pic{
+    .c-layout__pic {
         bottom: -35rem;
     }
+
+    .c-layout__pic img {
+        max-width: 60rem;
+    }
+
+    .c-layout__brand-logo svg {
+        height: calc(var(--_brand-logo-size) * 1.7);
+    }
+
 }
 
 @media (min-width: 87.5rem) and (min-height: 49.375rem) {

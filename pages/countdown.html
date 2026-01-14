@@ -28,7 +28,7 @@
         <div class="c-layout">
 
             <header class="c-layout__brand">
-                <div class="o-wrapper o-section-t">
+                <div class="o-wrapper">
                     <h1 class="c-layout__brand-logo">
                         <p class="u-heading">¡Muy pronto! <span class="u-hidden-for-seo">Betamina</span></p>
                         <svg fill="none" height="40" viewBox="0 0 181 40" width="181" xmlns="http://www.w3.org/2000/svg"
@@ -107,12 +107,15 @@
                 <div class="o-wrapper">
                     <h2 id="suscription-heading" class="c-suscription__heading u-heading">Suscribite y te avisaremos del
                         lanzamiento</h2>
-                    <form class="c-form">
+                    <form class="c-form" novalidate>
                         <label class="c-form__label" for="email">
                             <input class="c-form__input js-form__input" id="email" name="email" type="email"
                                 placeholder="Correo electrónico" required>
                         </label>
                         <button type="submit" class="c-form__btn c-btn">Enviar</button>
+                        <p class="c-form__success-message" style="display:none;">¡Gracias! Te avisaremos cuando lancemos
+                            Betamina.</p>
+                        <p class="c-form__error-message" style="display:none;"></p>
                     </form>
                 </div>
             </section>
@@ -126,6 +129,7 @@
 
 
     <script src="/assets/js/sitio/components.countdown.js"></script>
+    <script src="/assets/js/sitio/components.form-suscription.js"></script>
 </body>
 
 </html>
