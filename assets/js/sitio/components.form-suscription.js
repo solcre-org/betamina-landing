@@ -69,10 +69,44 @@ document.addEventListener("DOMContentLoaded", function () {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
   }
 
-  async function submitForm(email) {
-    const url = ""; //agregar link marcos
+  // Obtener el template de email desde el servidor
+  async function getEmailTemplate() {
+    try {
+      const response = await fetch("../assets/email-templates/suscripcion.html");
+      if (!response.ok) {
+        throw new Error("No se pudo cargar el template");
+      }
+      return await response.text();
+    } catch (error) {
+      console.error("Error cargando template:", error);
+      // Template de respaldo si no se puede cargar el archivo
+      return `
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<h1>¡Gracias por Suscribirte!</h1>
+<p>Estás cada vez más cerca de formar parte del programa de afiliados de iGaming con mayor crecimiento en LATAM.</p>
+<p>Te mantendremos informado sobre nuestro lanzamiento oficial y las novedades del programa.</p>
+<p>Saludos,<br>Equipo Betamina</p>
+</body>
+</html>`;
+    }
+  }
 
-    const payload = { email: email.trim() };
+  async function submitForm(email) {
+    const url = "https://l5j6mnkgyvi3pvrcqzhenb5fc40rwipi.lambda-url.us-east-1.on.aws/";
+
+    // Obtener el template
+    const htmlTemplate = await getEmailTemplate();
+
+    const payload = {
+      from: "Betamina",
+      to: ["juan.larrosa@solcre.com"],
+      subject: "¡Bienvenido a Betamina! - Gracias por Suscribirte",
+      html_body: htmlTemplate,
+      variables: {}
+    };
 
     const response = await fetch(url, {
       method: "POST",
