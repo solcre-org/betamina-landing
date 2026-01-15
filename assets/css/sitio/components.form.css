@@ -2,7 +2,7 @@
 /** COMPONENT: FORM
 /* ******************************************** */
 
-.c-form{
+.c-form {
     --_inputs-gap: 1.4rem;
     --_input-bg: var(--color-primary-100);
     --_input-br: 2em;
@@ -17,14 +17,14 @@
     gap: var(--_inputs-gap);
 }
 
-.c-form__group{
+.c-form__group {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     gap: 1rem;
     align-items: center;
 }
 
-.c-form__label{
+.c-form__label {
     position: relative;
     display: block;
     background-color: var(--_input-bg);
@@ -32,62 +32,103 @@
     font-size: var(--_input-fz);
     padding: var(--_input-py) var(--_input-px);
     overflow: hidden;
-    transition: box-shadow 250ms ease-out;  
+    transition: box-shadow 250ms ease-out;
 }
 
 .c-form__label:focus-within {
-  box-shadow: 0 0 0 3px var(--color-primary-300);
-  transition: box-shadow 250ms ease-out;
+    box-shadow: 0 0 0 3px var(--color-primary-300);
+    transition: box-shadow 250ms ease-out;
 }
 
-.c-form__label--phone{
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.c-form__label--phone {
     display: flex;
     gap: .3em;
 }
 
-.c-form__label--phone label{
+.c-form__label--phone label {
     display: block;
     overflow: hidden;
 }
 
-.c-form__label input{
+.c-form__label input {
     width: -webkit-fill-available;
 }
 
 .c-form__label input::placeholder {
-  color: hsl(var(--color-primary-900-hsl)/45%);
+    color: hsl(var(--color-primary-900-hsl)/45%);
 }
 
-.c-form__label--textarea{
+.c-form__label--textarea {
     border-radius: calc(var(--_input-br)*.8);
     min-height: 12rem;
 }
 
-.c-form__btn{
+.c-form__btn {
     margin-top: .5rem;
 }
 
+/* STATES */
+.c-form__label--error {
+    box-shadow: 0 0 0 3px var(--color-error);
+    transition: box-shadow 250ms ease-out;
+}
 
+.c-form__validation-error {
+    display: none;
+    color: var(--color-error);
+    font-size: var(--fz-100, 0.875rem);
+    text-align: left;
+    padding-left: var(--_input-px);
+    animation: fadeIn 200ms ease-out;
+}
+
+.c-form__error-message {
+    display: none;
+    color: var(--color-error);
+    font-size: var(--fz-200);
+    margin-top: 0.5rem;
+    padding-left: var(--_input-px);
+    animation: fadeIn 200ms ease-out;
+}
+
+.c-form__validation-error--visible {
+    display: block;
+}
 
 /* ********************** SHORT MOBILE ********************** */
 
-@media (max-width: 22.4375rem) { /* 359px */
+@media (max-width: 22.4375rem) {
+    /* 359px */
 }
 
 
 
 /* ********************** TALL MOBILE PORTRAIT ********************** */
 
-@media (max-width: 47.9375rem) and (min-height: 45.625rem) { /* 767px, 730px */
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) {
+    /* 767px, 730px */
 }
 
- 
+
 
 
 
 /* ********************** MOBILE LANDSCAPE ********************** */
 
-@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) { /* 500px, 767px */
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) {
+    /* 500px, 767px */
 }
 
 
@@ -96,17 +137,19 @@
 
 /* ********************** de Mobile a TABLET ********************** */
 
-@media (min-width: 48rem) { /* 768px */
+@media (min-width: 48rem) {
+    /* 768px */
 }
-@media (min-width: 48rem) and (orientation: portrait) {
-}
+
+@media (min-width: 48rem) and (orientation: portrait) {}
 
 
 
 
 /* ********************** de Tablet a DESKTOP ********************** */
 
-@media (min-width: 61.25rem) { /* 980px */
+@media (min-width: 61.25rem) {
+    /* 980px */
 }
 
 
@@ -114,9 +157,12 @@
 
 /* ********************** de Desktop a DESKTOP 2 ********************** */
 
-@media (min-width: 75rem) { /* 1200px */
+@media (min-width: 75rem) {
+    /* 1200px */
 }
-@media (min-width: 75rem) and (min-height: 45rem) { /* 1200, 720 */
+
+@media (min-width: 75rem) and (min-height: 45rem) {
+    /* 1200, 720 */
 }
 
 
@@ -124,9 +170,12 @@
 
 /* ********************** de Desktop 2 a HD ********************** */
 
-@media (min-width: 87.5rem) { /* 1400px */
+@media (min-width: 87.5rem) {
+    /* 1400px */
 }
-@media (min-width: 87.5rem) and (min-height: 49.375rem) { /* 1400px, 790px */
+
+@media (min-width: 87.5rem) and (min-height: 49.375rem) {
+    /* 1400px, 790px */
 }
 
 
@@ -134,15 +183,22 @@
 
 /* ********************** de Hd a FULL HD ********************** */
 
-@media (min-width: 100rem) { /* 1600px */
+@media (min-width: 100rem) {
+    /* 1600px */
 }
 
-@media (min-width: 100rem) and (min-height: 49.375rem) { /* 1600px, 790px */
-}
-@media (min-width: 100rem) and (min-height: 56.25rem) { /* 1600px, 900px */
+@media (min-width: 100rem) and (min-height: 49.375rem) {
+    /* 1600px, 790px */
 }
 
-@media (min-width: 112.5rem) { /* 1800px */
+@media (min-width: 100rem) and (min-height: 56.25rem) {
+    /* 1600px, 900px */
 }
-@media (min-width: 112.5rem) and (min-height: 56.25rem) { /* 1800px, 900px */
+
+@media (min-width: 112.5rem) {
+    /* 1800px */
+}
+
+@media (min-width: 112.5rem) and (min-height: 56.25rem) {
+    /* 1800px, 900px */
 }

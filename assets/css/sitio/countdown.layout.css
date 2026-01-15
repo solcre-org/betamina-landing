@@ -1,0 +1,210 @@
+/* ******************************************** */
+/** COMPONENT: LAYOUT
+/* ******************************************** */
+
+/* LAYOUT */
+
+.c-layout {
+    --_brand-logo-size: 5.2em;
+    --heading-fz: var(--fz-300);
+
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--color-primary-400), var(--color-primary-900));
+    overflow: hidden;
+}
+
+.c-layout__brand {
+    display: block;
+    margin-top: calc(var(--section-y) / 1.5);
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.c-layout__brand-logo svg {
+    height: var(--_brand-logo-size);
+    width: auto;
+    margin-top: 2em;
+}
+
+.c-layout::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-70%, 15%);
+    bottom: 0;
+    width: 200vw;
+    height: 200vw;
+    background-image: url(../../images/static/form/form-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.c-layout::after {
+    --_img-size: 150vw;
+
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    top: 0;
+    width: var(--_img-size);
+    height: var(--_img-size);
+    background-image: url(../../images/static/form/form-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .1;
+    mix-blend-mode: screen;
+}
+
+.c-layout__pic {
+    position: absolute;
+    bottom: -20rem;
+    left: 12rem;
+    transform: translate(-50%, 0);
+    z-index: 2;
+}
+
+.c-layout__pic img {
+    max-width: 60rem;
+}
+
+
+/* ********************** SHORT MOBILE ********************** */
+
+@media (max-width: 22.4375rem) {
+    /* 359px */
+}
+
+
+
+
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) {
+    /* 767px, 730px */
+}
+
+
+
+
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) {
+    /* 500px, 767px */
+}
+
+
+
+
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) {
+    /* 768px */
+
+    .c-layout__pic {
+        bottom: -26rem;
+    }
+
+    .c-layout__pic img {
+        max-width: 32rem;
+    }
+
+}
+
+@media (min-width: 48rem) and (orientation: portrait) {}
+
+
+
+
+/* ********************** de Tablet a DESKTOP ********************** */
+
+@media (min-width: 61.25rem) {
+    /* 980px */
+
+    .c-layout__brand-logo svg {
+        height: calc(var(--_brand-logo-size) * 1.2);
+    }
+
+    .c-layout::after {
+        --_img-size: 52vw;
+    }
+
+    .c-layout__pic {
+        bottom: -32rem;
+        left: 15rem;
+    }
+
+
+}
+
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+
+@media (min-width: 75rem) {
+    /* 1200px */
+}
+
+@media (min-width: 75rem) and (min-height: 45rem) {
+    /* 1200, 720 */
+}
+
+
+/* ********************** de Desktop 2 a HD ********************** */
+
+@media (min-width: 87.5rem) {
+
+    /* 1400px */
+    .c-layout__pic {
+        bottom: -35rem;
+    }
+
+    .c-layout__pic img {
+        max-width: 60rem;
+    }
+
+    .c-layout__brand-logo svg {
+        height: calc(var(--_brand-logo-size) * 1.7);
+    }
+
+}
+
+@media (min-width: 87.5rem) and (min-height: 49.375rem) {
+    /* 1400px, 790px */
+}
+
+
+
+
+/* ********************** de Hd a FULL HD ********************** */
+
+@media (min-width: 100rem) {
+    /* 1600px */
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) {
+    /* 1600px, 790px */
+}
+
+@media (min-width: 100rem) and (min-height: 56.25rem) {
+    /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) {
+    /* 1800px */
+}
+
+@media (min-width: 112.5rem) and (min-height: 56.25rem) {
+    /* 1800px, 900px */
+}
