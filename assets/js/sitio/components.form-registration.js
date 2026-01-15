@@ -92,43 +92,63 @@ document.addEventListener("DOMContentLoaded", function () {
     errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
-  // Obtener el template de email desde el servidor
-  async function getEmailTemplate() {
-    try {
-      const response = await fetch("assets/email-templates/registro.html");
-      if (!response.ok) {
-        throw new Error("No se pudo cargar el template");
-      }
-      return await response.text();
-    } catch (error) {
-      console.error("Error cargando template:", error);
-      // Template de respaldo si no se puede cargar el archivo
-      return `
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"></head>
-<body>
-<h1>¡Gracias por Registrarte, {{name}}!</h1>
-<p>Bienvenido al Programa de Afiliados de Betamina.</p>
-<h2>Datos de tu Solicitud:</h2>
-<ul>
-  <li><strong>Nombre:</strong> {{name}}</li>
-  <li><strong>Email:</strong> {{email}}</li>
-  <li><strong>Teléfono:</strong> {{phone}}</li>
-  <li><strong>Contacto preferido:</strong> {{contact_method}}</li>
-</ul>
-<p>Nuestro equipo te contactará pronto.</p>
-<p>Saludos,<br>Equipo Betamina</p>
+  // Template embebido
+  function getEmailTemplate() {
+    return `<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por Registrarte!</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f4f4f4; padding: 20px 0;">
+        <tr>
+            <td align="center">
+                <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border-radius: 8px;">
+                    <tr>
+                        <td align="center" style="background: linear-gradient(135deg, #0022ff 0%, #0033cc 100%); padding: 40px 20px; border-radius: 8px 8px 0 0;">
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: bold;">¡Bienvenido al Programa de Afiliados!</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 35px 30px;">
+                            <h2 style="color: #0022ff; font-size: 22px; margin: 0 0 20px 0;">Gracias por Registrarte, {{name}}</h2>
+                            <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">Tu solicitud al <strong>Programa de Afiliados de Betamina</strong> ha sido recibida exitosamente. Nuestro equipo la revisará y te contactaremos pronto.</p>
+                            <div style="background-color: #f8f9ff; border-left: 4px solid #0022ff; border-radius: 4px; padding: 20px; margin: 25px 0;">
+                                <h3 style="color: #0022ff; font-size: 16px; margin: 0 0 12px 0;">Datos Registrados</h3>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Nombre:</strong> {{name}}</p>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Email:</strong> {{email}}</p>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Teléfono:</strong> {{phone}}</p>
+                            </div>
+                            <div style="margin: 25px 0;">
+                                <h3 style="color: #0022ff; font-size: 18px; margin: 0 0 15px 0;">Próximos Pasos</h3>
+                                <ol style="margin: 0; padding-left: 20px; color: #333333; font-size: 14px; line-height: 1.8;">
+                                    <li style="margin-bottom: 10px;">Revisaremos tu solicitud en 24-48 horas</li>
+                                    <li style="margin-bottom: 10px;">Te contactaremos para conocer tu estrategia</li>
+                                    <li>Recibirás acceso al panel de NetRefer</li>
+                                </ol>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 25px; background-color: #f8f9ff; text-align: center;">
+                            <p style="margin: 0; color: #999999; font-size: 12px;">© 2026 Betamina - Programa de Afiliados</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>`;
-    }
   }
 
   async function submitForm(data) {
     const url = "https://l5j6mnkgyvi3pvrcqzhenb5fc40rwipi.lambda-url.us-east-1.on.aws/";
 
     // Obtener el template
-    const htmlTemplate = await getEmailTemplate();
+    const htmlTemplate = getEmailTemplate();
 
     const payload = {
       from: "Betamina",
