@@ -70,11 +70,11 @@
     bottom: -20rem;
     left: 12rem;
     transform: translate(-50%, 0);
-    z-index: 2;
+    z-index: 1;
 }
 
 .c-layout__pic img {
-    max-width: 60rem;
+    max-width: 30rem;
 }
 
 
@@ -145,6 +145,11 @@
         bottom: -32rem;
         left: 15rem;
     }
+
+    .c-layout__pic img {
+        max-width: 42rem;
+    }
+
 
 
 }
