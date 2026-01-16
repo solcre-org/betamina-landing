@@ -37,7 +37,7 @@
     bottom: 0;
     width: 200vw;
     height: 200vw;
-    background-image: url(../../images/static/form/form-bg.png);
+    background-image: url(../images/static/form/form-bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -55,7 +55,7 @@
     top: 0;
     width: var(--_img-size);
     height: var(--_img-size);
-    background-image: url(../../images/static/form/form-img.png);
+    background-image: url(../images/static/form/form-img.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
