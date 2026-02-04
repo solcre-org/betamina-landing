@@ -1,0 +1,274 @@
+/* ******************************************** */
+/** COMPONENT: POPUP
+/* ******************************************** */
+
+.c-popup {
+    --_color: var(--color-primary-900);
+    --_bg: var(--color-neutral-100);
+    --_fz: var(--fz-100);
+    --_fw: 500;
+    --_ouside-padding: calc(var(--viewport-margin) + var(--wrapper-x));
+    --_holder-px: 3.4rem;
+    --_holder-py: 3.6rem;
+    --_overlay-bg: hsl(var(--color-alternative-800-hsl)/80%);
+    --_overlay-op: .8;
+    --_bts-gap-x: 1.5rem;
+    --_bts-gap-y: 1rem;
+    --_icon-fz: 2.2em;
+    --_holder-w: var(--wrapper-x);
+    --_popup-delay-in: .4s;
+    --_popup-delay-out: .2s;
+    --_close-color: var(--color-primary-400);
+
+    --text-color: var(--popup-color, var(--_color));
+    --text-fz: var(--fz-200);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: var(--_ouside-padding);
+    isolation: isolate;
+    display: none;
+}
+
+.c-popup__overlay {
+    background: var(--popup-overlay-bg, var(--_overlay-bg));
+    opacity: var(--popup-overlay-op, var(--_overlay-op));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0.8rem);
+    opacity: 0;
+}
+
+.c-popup__holder {
+    position: relative;
+    min-width: var(--popup-holder-w, var(--_holder-w));
+    max-height: calc(100vh - var(--_ouside-padding)*2);
+    font-size: var(--popup-fz, var(--_fz));
+    font-weight: var(--popup-fw, var(--_fw));
+    line-height: 1.2;
+    background-color: var(--popup-bg, var(--_bg));
+    color: var(--popup-color, var(--_color));
+    border-radius: 1.6rem;
+    padding: var(--popup-py, var(--_holder-py)) var(--popup-px, var(--_holder-px));
+    z-index: 1;
+    text-align: center;
+    opacity: 0;
+    transform: translate3d(0, 5rem, 0);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 4rem 0 hsl(var(--color-neutral-900-hsl) / 20%);
+}
+
+.c-popup__pic img {
+    width: 100%;
+}
+
+.c-popup__close {
+    position: absolute;
+    right: calc(var(--popup-px, var(--_holder-px))*.7);
+    top: calc(var(--popup-px, var(--_holder-px))*.7);
+    color: var(--color-primary-900);
+}
+
+.c-popup__close span[class*="icon-"] {
+    color: var(--_close-color);
+}
+
+.c-popup__holder>*:not(:first-child) {
+    margin-top: calc(var(--section-y) / 2);
+}
+
+.c-popup.is-visible {
+    display: flex;
+}
+
+.c-popup.is-visible .c-popup__holder {
+    animation: showPopup var(--_popup-delay-in) ease-out forwards;
+}
+
+.c-popup.is-visible .c-popup__overlay {
+    animation: showOverlay var(--_popup-delay-in) ease-out forwards;
+}
+
+
+.c-popup.is-closing .c-popup__holder {
+    animation: hidePopup var(--_popup-delay-out) ease-out forwards;
+}
+
+.c-popup.is-closing .c-popup__overlay {
+    animation: hideOverlay var(--_popup-delay-out) ease-out forwards;
+}
+
+@keyframes showPopup {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 5rem, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes hidePopup {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(0, 5rem, 0);
+    }
+}
+
+@keyframes showOverlay {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: var(--_overlay-opacity);
+    }
+}
+
+@keyframes hideOverlay {
+    0% {
+        opacity: var(--_overlay-opacity);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ********************** MEDIA HOVER ********************** */
+
+@media (hover: hover) {
+
+    .c-popup__close:is(:hover, :focus-visible) {
+        color: var(--color-hover);
+        transition: color var(--generic-delay) ease-out;
+    }
+
+}
+
+
+/* ********************** SHORT MOBILE ********************** */
+
+@media (max-width: 22.4375rem) {
+    /* 359px */
+}
+
+
+
+
+
+/* ********************** TALL MOBILE PORTRAIT ********************** */
+
+@media (max-width: 47.9375rem) and (min-height: 45.625rem) {
+    /* 767px, 730px */
+}
+
+
+
+
+
+/* ********************** MOBILE LANDSCAPE ********************** */
+
+@media (orientation: landscape) and (min-width: 31.25rem) and (max-width: 47.9375rem) {
+    /* 500px, 767px */
+}
+
+
+
+
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) {
+    /* 768px */
+}
+
+@media (min-width: 48rem) and (orientation: portrait) {}
+
+
+
+
+/* ********************** de Tablet a DESKTOP ********************** */
+
+@media (min-width: 61.25rem) {
+
+    /* 980px */
+    .c-popup__holder {
+        --_holder-w: 62rem;
+    }
+}
+
+
+
+
+/* ********************** de Desktop a DESKTOP 2 ********************** */
+
+@media (min-width: 75rem) {
+
+    /* 1200px */
+    .c-popup__pic img {
+        min-width: 80rem;
+    }
+
+}
+
+@media (min-width: 75rem) and (min-height: 45rem) {
+    /* 1200, 720 */
+}
+
+
+
+
+/* ********************** de Desktop 2 a HD ********************** */
+
+@media (min-width: 87.5rem) {
+    /* 1400px */
+}
+
+@media (min-width: 87.5rem) and (min-height: 49.375rem) {
+    /* 1400px, 790px */
+}
+
+
+
+
+/* ********************** de Hd a FULL HD ********************** */
+
+@media (min-width: 100rem) {
+    /* 1600px */
+}
+
+@media (min-width: 100rem) and (min-height: 49.375rem) {
+    /* 1600px, 790px */
+}
+
+@media (min-width: 100rem) and (min-height: 56.25rem) {
+    /* 1600px, 900px */
+}
+
+@media (min-width: 112.5rem) {
+    /* 1800px */
+}
+
+@media (min-width: 112.5rem) and (min-height: 56.25rem) {
+    /* 1800px, 900px */
+}
