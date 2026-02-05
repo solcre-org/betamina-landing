@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /
 
 # Sitemap
-Sitemap: https://betamina.com/sitemap.xml
+Sitemap: https://betamina.partners/sitemap.xml
