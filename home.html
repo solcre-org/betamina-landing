@@ -24,7 +24,7 @@
         content="Formá parte del programa de afiliados de Betamina, uno de los ecosistemas de iGaming con mayor crecimiento de LATAM. Comisiones competitivas, pagos mensuales y tecnología de clase mundial.">
     <meta property="og:image" content="https://betamina.partners/assets/images/static/avatar.jpg">
     <meta property="og:locale" content="es_UY">
-    
+
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://betamina.partners">
@@ -51,6 +51,9 @@
     <link rel="stylesheet" href="./assets/styles/home.inline.min.css">
     <link rel="stylesheet" href="./assets/styles/fixed.min.css">
     <link rel="stylesheet" href="./assets/styles/home.min.css">
+    <link rel="stylesheet" href="./assets/css/sitio/components.popup.css">
+
+
 </head>
 
 <body>
@@ -1023,7 +1026,8 @@
                 <nav class="c-footer__nav c-footer-nav">
                     <ul class="c-footer-nav__list">
                         <li class="c-footer-nav__item js-animate-in">
-                            <a class="c-footer-nav__link u-tap-size" href="#">Programa de Afiliados</a>
+                            <a class="c-footer-nav__link u-tap-size js-showPopup" href="#popup-1">Programa de
+                                Afiliados</a>
                         </li>
                         <li class="c-footer-nav__item js-animate-in">
                             <a class="c-footer-nav__link u-tap-size" href="#">Términos y Condiciones</a>
@@ -1059,6 +1063,8 @@
             </div>
         </div>
 
+
+
     </footer>
 
 
@@ -1073,6 +1079,27 @@
 
     <!-- Sitio -->
     <script defer src="./scripts/sitio/home.min.js"></script>
+
+    <!-- POPUPS LEGAL -->
+    <div class="c-popup" id="popup-1">
+        <div class="c-popup__overlay js-popupOverlay"></div>
+        <div class="c-popup__holder">
+            <button class="c-popup__close icon-cross js-hidePopup"></button>
+
+            <h2 class="c-popup__title u-heading-xs">Términos y Condiciones</h2>
+
+            <p class=" u-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quam
+                expedita ad
+                perspiciatis
+                nihil ullam quis, sit eos recusandae sunt eum quasi placeat neque ut est
+                reprehenderit non
+                consectetur
+                deserunt?</p>
+
+        </div>
+    </div>
+
+    <script src="./assets/js/sitio/component.popup.js"></script>
 
 </body>
 

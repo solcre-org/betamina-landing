@@ -77,7 +77,16 @@
     position: absolute;
     right: calc(var(--popup-px, var(--_holder-px))*.7);
     top: calc(var(--popup-px, var(--_holder-px))*.7);
-    color: var(--color-primary-900);
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('/assets/icons/icon-cross.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
 }
 
 .c-popup__close span[class*="icon-"] {

@@ -7,6 +7,8 @@
 @import url(sitio/components.tabs.css);
 @import url(sitio/components.form.css);
 @import url(sitio/components.dialcode.css);
+@import url(sitio/components.popup.css);
+
 
 /* Page */
 @import url(sitio/home.benefits.css);
