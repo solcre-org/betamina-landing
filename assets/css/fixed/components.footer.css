@@ -20,8 +20,10 @@
 
 .c-footer__top{
     display: flex;
+    align-items: center;
     gap: 3rem;
 }
+
 
 .c-footer-nav{
     --_items-gap: 1em;
