@@ -36,6 +36,10 @@
     background-image: url(/assets/icons/icon-arrow-down.svg);
 }
 
+.u-icon--leng{
+    background-image: url(/assets/icons/icon-leng.svg);
+}
+
 /* blue */
 
 .u-icon--check-blue{

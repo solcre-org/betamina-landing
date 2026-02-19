@@ -38,6 +38,10 @@
 
 .is-fixed .c-header__wrapper {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     background: hsl(var(--color-primary-900-hsl)/80%);
     backdrop-filter: blur(10px);
     transition: background 300ms ease-out, backdrop-filter 300ms ease-out;

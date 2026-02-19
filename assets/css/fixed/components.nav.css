@@ -91,6 +91,10 @@ body.nav-open {
         padding-block: var(--_item-py);
     }
 
+    .c-nav__lang {
+        margin-top: calc(var(--separator-y)*.8);
+    }
+
     .c-nav__ctas {
         flex-direction: column;
         margin-top: calc(var(--separator-y)*.8);
