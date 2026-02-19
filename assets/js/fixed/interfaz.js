@@ -3,6 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 // ! HEADER WAYPOINTS
+// Uses native scroll listener (more reliable than ScrollTrigger for this use case)
 
 function headerFixedInit() {
     const header = document.querySelector('.js-header');
@@ -10,17 +11,16 @@ function headerFixedInit() {
 
     if (!header || !limit) return;
 
-    const limitOffset = limit.getBoundingClientRect().top + window.scrollY;
+    function updateHeaderFixed() {
+        const limitRect = limit.getBoundingClientRect();
+        const limitBottom = limitRect.bottom;
+        header.classList.toggle('is-fixed', limitBottom < 0);
+    }
 
-    ScrollTrigger.create({
-        trigger: document.body,
-        start: () => limitOffset + ' top',
-        end: 'bottom bottom',
-        onUpdate: self => {
-            header.classList.toggle('is-fixed', self.scroll() > limitOffset);
-        },
-        invalidateOnRefresh: true
-    });
+    window.addEventListener('scroll', updateHeaderFixed, { passive: true });
+    window.addEventListener('resize', updateHeaderFixed);
+    window.addEventListener('load', updateHeaderFixed);
+    updateHeaderFixed();
 }
 
 function navInit() {
@@ -28,6 +28,7 @@ function navInit() {
   const $navToggle = document.getElementById('nav-toggle');
   const $nav = document.getElementById('main-nav');
   const $overlay = document.querySelector(".js-nav-overlay");
+  if (!$navToggle || !$nav) return;
   const mediaq = window.matchMedia("(max-width: 1199px)");
   const $navItems = document.querySelectorAll(".js-nav-item");
 

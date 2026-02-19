@@ -1,9 +1,9 @@
 /**
  * Language selector - updates displayed value when option is clicked
+ * Runs on 'load' to ensure header/nav are initialized first
  */
-document.addEventListener('DOMContentLoaded', () => {
+function langSelectInit() {
   const langSelect = document.querySelector('.c-lang-select');
-
   if (!langSelect) return;
 
   const valueEl = langSelect.querySelector('.c-lang-select__value');
@@ -22,4 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
+}
+
+window.addEventListener('load', langSelectInit);
