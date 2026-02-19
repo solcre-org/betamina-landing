@@ -33,6 +33,23 @@
     --text-color: var(--color-primary-900);
 }
 
+.c-faqs-section__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.c-faqs-section__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.c-faqs-section__cta-icon {
+    flex-shrink: 0;
+}
+
 .c-faqs-section__faqs {
     margin-top: calc(var(--separator-y) * .6);
 }
