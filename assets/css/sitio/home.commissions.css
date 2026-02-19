@@ -10,7 +10,7 @@
     --_type-fz: var(--fz-300);
     --_value-fz: var(--fz-400);
     --_value-color: hsl(from hsl(var(--color-secondary-400-hsl)) h 90% l);
-    background: linear-gradient(180deg, var(--color-primary-400), var(--color-primary-600));
+    background: linear-gradient(180deg, var(--color-alternate-800), var(--color-primary-600));
     padding-bottom: 2rem;
 }
 
@@ -226,7 +226,7 @@
     }
 
     .c-commissions__deco-img {
-        margin-bottom: -10rem;
+        margin-bottom: -24rem;
         margin-top: -4rem;
         max-width: 40rem;
     }

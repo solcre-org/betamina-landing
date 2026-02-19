@@ -58,9 +58,16 @@ function dialcodeInit() {
                         });
                     }
 
-                    $input.addEventListener("input", () => {
+                    function syncHiddenInput() {
                         const cleanNumber = $input.value.replace(/\D/g, '');
-                        $hiddenInput.value = `${currentPrefix}${cleanNumber}`;
+                        $hiddenInput.value = cleanNumber ? `${currentPrefix}${cleanNumber}` : '';
+                    }
+                    $input.addEventListener("input", syncHiddenInput);
+                    $input.addEventListener("change", syncHiddenInput);
+                    $input.addEventListener("blur", syncHiddenInput);
+
+                    $dialcodeOptions.forEach(opt => {
+                        opt.addEventListener("click", syncHiddenInput);
                     });
 
                     document.addEventListener("click", (e) => {

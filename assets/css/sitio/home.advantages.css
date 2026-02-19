@@ -81,8 +81,10 @@
     }
 
     .c-advantages__list{
-        display: grid;
-        grid-template-columns: repeat(6,1fr);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
         gap: var(--_items-gap);
     }
 
@@ -103,9 +105,6 @@
 
 @media (min-width: 61.25rem) { /* 980px */
 
-    .c-advantages__list.has-odd-items .c-advantages__item:nth-of-type(n+4){
-        transform: translateX(50%);
-    }
     
     .c-advantage__heading{
         max-width: var(--heading-max-w,none);

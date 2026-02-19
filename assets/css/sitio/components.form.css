@@ -40,6 +40,8 @@
     transition: box-shadow 250ms ease-out;
 }
 
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -62,11 +64,24 @@
     overflow: hidden;
 }
 
-.c-form__label input {
+.c-form__label input,
+.c-form__label select {
     width: -webkit-fill-available;
+    width: 100%;
 }
 
-.c-form__label input::placeholder {
+.c-form__label select {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    appearance: auto;
+}
+
+.c-form__label input::placeholder,
+.c-form__label textarea::placeholder {
+    color: hsl(var(--color-primary-900-hsl)/45%);
+}
+.c-form__label--select option:disabled {
     color: hsl(var(--color-primary-900-hsl)/45%);
 }
 
@@ -75,8 +90,106 @@
     min-height: 12rem;
 }
 
+.c-form__input--textarea{
+    width: 100%;
+}
+
 .c-form__btn {
     margin-top: .5rem;
+}
+
+/* TRAFFIC SOURCE DROPDOWN */
+.c-traffic-dropdown {
+    background-color: var(--_input-bg);
+    border-radius: var(--_input-br);
+    transition: box-shadow 250ms ease-out;
+}
+
+.c-traffic-dropdown:hover,
+.c-traffic-dropdown:focus-within {
+    box-shadow: 0 0 0 2px var(--color-primary-300);
+}
+
+.c-traffic-dropdown.is-open {
+    box-shadow: 0 0 0 3px var(--color-primary-300);
+}
+
+.c-traffic-dropdown__toggle {
+    font-size: var(--_input-fz);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--_input-py) var(--_input-px);
+    cursor: pointer;
+}
+
+.c-traffic-dropdown__text {
+    font-size: var(--_input-fz);
+    color: var(--color-primary-900);
+    
+}
+
+.c-traffic-dropdown__text:not(.has-selection) {
+    color: hsl(var(--color-primary-900-hsl)/45%);
+}
+
+.c-traffic-dropdown__arrow {
+    font-size: 1rem;
+    transition: transform 250ms ease-out;
+    filter: invert(1) brightness(0.2);
+}
+
+.c-traffic-dropdown.is-open .c-traffic-dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+.c-traffic-dropdown__menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 350ms ease-out, padding 350ms ease-out;
+}
+
+.c-traffic-dropdown.is-open .c-traffic-dropdown__menu {
+    max-height: 40rem;
+    overflow-y: auto;
+    padding-top: 0.5rem;
+    border-top: .1rem solid hsl(var(--color-primary-900-hsl)/10%);
+}
+
+.c-traffic-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    padding: 0.65em var(--_input-px);
+    cursor: pointer;
+    transition: background-color 150ms ease-out;
+    user-select: none;
+}
+
+.c-traffic-dropdown__item:hover {
+    background-color: hsl(var(--color-primary-900-hsl)/5%);
+}
+
+.c-traffic-dropdown__item:last-child {
+    padding-bottom: 0.75em;
+}
+
+.c-traffic-dropdown__checkbox {
+    --_checkbox-size: 1.125rem;
+    width: var(--_checkbox-size);
+    height: var(--_checkbox-size);
+    cursor: pointer;
+}
+
+.c-traffic-dropdown__label {
+    font-size: var(--_input-fz);
+    color: var(--color-primary-900);
+    cursor: pointer;
+}
+
+.c-form__label--other {
+    min-height: 8rem;
 }
 
 /* STATES */

@@ -4,16 +4,81 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const nameInput = form.querySelector("#name");
   const emailInput = form.querySelector("#email");
+  const countryInput = form.querySelector("#country");
   const phoneInput = form.querySelector("#phone-num");
   const phoneHiddenInput = form.querySelector('input[name="phone-num-final"]');
   const contactMethodInput = form.querySelector("#primary-contact-method");
   const contactMethodHiddenInput = form.querySelector('input[name="primary-contact-method-final"]');
   const messageInput = form.querySelector('textarea[name="mensaje"]');
+  const trafficSourceCheckboxes = form.querySelectorAll('input[name="traffic-source"]');
+  const trafficSourceOtherCheckbox = form.querySelector('.js-traffic-other-checkbox');
+  const trafficSourceOtherLabel = form.querySelector('.c-form__label--other');
+  const trafficSourceOtherInput = form.querySelector('textarea[name="traffic-source-other"]');
   const submitBtn = form.querySelector('button[type="submit"]');
 
   if (!nameInput || !emailInput || !submitBtn) return;
 
   let isSubmitting = false;
+
+  // Traffic Source Dropdown functionality
+  const trafficDropdown = form.querySelector('.js-traffic-dropdown');
+  const trafficToggle = form.querySelector('.js-traffic-toggle');
+  const trafficDisplay = form.querySelector('.js-traffic-display');
+
+  if (trafficDropdown && trafficToggle) {
+    // Toggle dropdown
+    trafficToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      trafficDropdown.classList.toggle('is-open');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!trafficDropdown.contains(e.target)) {
+        trafficDropdown.classList.remove('is-open');
+      }
+    });
+
+    // Update display text when checkboxes change
+    function updateTrafficDisplay() {
+      const selectedLabels = [];
+      trafficSourceCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          const label = checkbox.nextElementSibling;
+          if (label) {
+            selectedLabels.push(label.textContent);
+          }
+        }
+      });
+
+      if (selectedLabels.length > 0) {
+        trafficDisplay.textContent = selectedLabels.join(', ');
+        trafficDisplay.classList.add('has-selection');
+      } else {
+        trafficDisplay.textContent = '¿Cómo supiste de Betamina?';
+        trafficDisplay.classList.remove('has-selection');
+      }
+    }
+
+    // Listen to checkbox changes
+    trafficSourceCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', updateTrafficDisplay);
+    });
+  }
+
+  // Manejar visibilidad del textarea "Otro" en traffic source
+  if (trafficSourceOtherCheckbox && trafficSourceOtherLabel) {
+    trafficSourceOtherCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        trafficSourceOtherLabel.style.display = 'block';
+      } else {
+        trafficSourceOtherLabel.style.display = 'none';
+        if (trafficSourceOtherInput) {
+          trafficSourceOtherInput.value = '';
+        }
+      }
+    });
+  }
 
   // Crear mensajes de éxito y error si no existen
   let successMessage = form.querySelector(".c-form__success-message");
@@ -63,11 +128,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // Limpiar formulario
     nameInput.value = "";
     emailInput.value = "";
+    if (countryInput) countryInput.value = "";
     if (phoneInput) phoneInput.value = "";
     if (phoneHiddenInput) phoneHiddenInput.value = "";
     if (contactMethodInput) contactMethodInput.value = "";
     if (contactMethodHiddenInput) contactMethodHiddenInput.value = "";
     if (messageInput) messageInput.value = "";
+    if (trafficSourceCheckboxes) {
+      trafficSourceCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      if (trafficDisplay) {
+        trafficDisplay.textContent = '¿Cómo supiste de Betamina?';
+        trafficDisplay.classList.remove('has-selection');
+      }
+    }
+    if (trafficSourceOtherInput) trafficSourceOtherInput.value = "";
+    if (trafficSourceOtherLabel) trafficSourceOtherLabel.style.display = "none";
 
     // Scroll suave al mensaje de éxito
     successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -119,7 +196,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <h3 style="color: #0022ff; font-size: 16px; margin: 0 0 12px 0;">Datos Registrados</h3>
                                 <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Nombre:</strong> {{name}}</p>
                                 <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Email:</strong> {{email}}</p>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>País:</strong> {{country}}</p>
                                 <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Teléfono:</strong> {{phone}}</p>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Cómo nos conoció:</strong> {{traffic_source}}</p>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Mensaje:</strong> {{message}}</p>
                             </div>
                             <div style="margin: 25px 0;">
                                 <h3 style="color: #0022ff; font-size: 18px; margin: 0 0 15px 0;">Próximos Pasos</h3>
@@ -152,15 +232,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const payload = {
       from: "Betamina",
-      to: ["juan.larrosa@solcre.com"],
+      to: ["bruna.ceppa@solcre.com"],
       subject: "¡Bienvenido al Programa de Afiliados de Betamina!",
       html_body: htmlTemplate,
       variables: {
         name: data.name,
         email: data.email,
+        country: data.country || "No especificado",
         phone: data.phone || "No proporcionado",
         contact_method: data.contact_method || "Email",
-        message: data.message || ""
+        message: data.message || "",
+        traffic_source: data.traffic_source || "No especificado",
+        traffic_source_other: data.traffic_source_other || ""
       }
     };
 
@@ -209,17 +292,53 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Obtener valores de teléfono y método de contacto
-    const phone = phoneHiddenInput ? phoneHiddenInput.value : (phoneInput ? phoneInput.value : "");
+    if (countryInput && !countryInput.value.trim()) {
+      countryInput.focus();
+      showError("Por favor, seleccioná tu país");
+      return;
+    }
+
+    // Obtener valores de país, teléfono y método de contacto
+    const country = countryInput ? countryInput.value.trim() : "";
+    let phone = "";
+    const phoneGroup = form.querySelector(".js-phone-input");
+    if (phoneGroup) {
+      const prefixEl = phoneGroup.querySelector(".js-phone-prefix");
+      const inputEl = phoneGroup.querySelector("#phone-num") || phoneGroup.querySelector('input[name="phone-num"]');
+      const prefix = prefixEl ? prefixEl.textContent.trim().replace(/\s/g, "") : "";
+      const digits = inputEl ? (inputEl.value || "").replace(/\D/g, "") : "";
+      if (prefix && digits) {
+        phone = `${prefix}${digits}`;
+      } else if (phoneHiddenInput && phoneHiddenInput.value.trim()) {
+        phone = phoneHiddenInput.value.trim();
+      } else if (inputEl && inputEl.value.trim()) {
+        phone = inputEl.value.trim();
+      }
+    }
     const contactMethod = contactMethodHiddenInput ? contactMethodHiddenInput.value : (contactMethodInput ? contactMethodInput.value : "");
     const message = messageInput ? messageInput.value.trim() : "";
+    
+    // Obtener todos los checkboxes seleccionados de traffic source
+    const trafficSourceValues = [];
+    if (trafficSourceCheckboxes) {
+      trafficSourceCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          trafficSourceValues.push(checkbox.value);
+        }
+      });
+    }
+    const trafficSource = trafficSourceValues.length > 0 ? trafficSourceValues.join(", ") : "";
+    const trafficSourceOther = trafficSourceOtherInput ? trafficSourceOtherInput.value.trim() : "";
 
     const formData = {
       name,
       email,
+      country: country || "No especificado",
       phone,
       contact_method: contactMethod || "Email",
-      message
+      message,
+      traffic_source: trafficSource,
+      traffic_source_other: trafficSourceOther
     };
 
     try {
@@ -244,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", handleSubmit);
 
   // Limpiar errores cuando el usuario empiece a escribir
-  [nameInput, emailInput].forEach((input) => {
+  [nameInput, emailInput, countryInput].forEach((input) => {
     if (input) {
       input.addEventListener("input", () => {
         if (errorMessage && errorMessage.style.display !== "none") {
