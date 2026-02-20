@@ -105,7 +105,7 @@
 
     .c-nav{
         --_items-gap: 3rem;
-        --_gap: 4.8rem;
+        --_gap: 2.8rem;
         /* --_fz: var(--fz-200); el del diseño */
     }
 }

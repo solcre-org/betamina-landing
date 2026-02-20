@@ -68,8 +68,8 @@
         --fz-500: clamp(2.3rem,1.8vw,2.7rem);
         --fz-600: clamp(2.6rem,2.22vw,3.2rem);
         --fz-700: clamp(2.6rem,2.5vw,3.6rem);
-        --fz-800: clamp(3.6rem,3.05vw,4.6rem);
-        --fz-900: clamp(3.6rem,3.82vw,7rem);
+        --fz-800: clamp(3.6rem,2.63vw,3.8rem);
+        --fz-900: clamp(3.8rem,3.611vw,5.2rem);
         
     }
 }

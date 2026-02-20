@@ -5,7 +5,7 @@
 .c-scope {
     --_countries-gap-y: 1rem;
     --_countries-gap-x: 1rem;
-    --_country-fz: var(--fz-300);
+    --_country-fz: var(--fz-200);
     --_country-flag-size: 3rem;
     --_country-color: var(--color-primary-900);
     --_country-br: 0.75em;
@@ -69,6 +69,10 @@
     gap: 0.7em;
     text-align: left;
     line-height: 1;
+}
+
+.c-country__name{
+    font-size: var(--fz-200);
 }
 
 .c-country__flag {
@@ -169,7 +173,7 @@
 
     .c-scope__countries {
         grid-template-columns: repeat(5,1fr);
-        max-width: 144rem;
+        max-width: 125rem;
         margin-inline: auto;
         overflow: initial;
     }
@@ -208,7 +212,7 @@
     /* 1400px */
 
     .c-scope {
-        --_country-padd: 0.7em 0.8em;
+        --_country-padd: 0.5em 0.4em;
         --_countries-gap-y: 3rem;
         --_countries-gap-x: 2rem;
         --_country-fz: var(--fz-400);
@@ -239,6 +243,10 @@
 
 @media (min-width: 112.5rem) {
     /* 1800px */
+
+    .c-scope__countries {
+        max-width: 144rem;
+    }  
 }
 
 @media (min-width: 112.5rem) and (min-height: 56.25rem) {

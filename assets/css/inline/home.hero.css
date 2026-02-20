@@ -4,7 +4,7 @@
 
 .c-hero {
     --heading-max-w: 9.5em;
-    --heading-fz: 3.6rem;
+    --heading-fz: var(--fz-900);
     --text-max-w: 29em;
 
     position: relative;
@@ -308,7 +308,6 @@
     /* 980px */
 
     .c-hero {
-        --heading-fz: clamp(3.6rem, 4.30vw, 6.2rem);
         background:
             linear-gradient(180deg, hsl(var(--color-primary-900-hsl)/0%), hsl(var(--color-primary-900-hsl)/100%)),
             linear-gradient(60deg, var(--color-alternate-400) 30%, var(--color-primary-400));

@@ -3,7 +3,7 @@
 /* ******************************************** */
 
 .c-benefits{
-    --_icon-size: 8rem;
+    --_icon-size: 6.1rem;
     --_bg-hsl: var(--color-neutral-500-hsl);
     --_bg-op: 30%;
     --_br: 3rem;

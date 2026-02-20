@@ -1,0 +1,126 @@
+/* ******************************************** */
+/** COMPONENT: SHARE FAB (Floating Action Button)
+/* ******************************************** */
+
+.c-share-fab {
+    --_size: 4.5rem;
+    --_social-size: 2.75rem;
+    --_gap: 0.75rem;
+    --_transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--_gap);
+    z-index: 999;
+}
+
+.c-share-fab__toggle {
+    width: var(--_size);
+    height: var(--_size);
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--color-primary-300), var(--color-secondary-400), var(--color-hover));
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+    color: var(--color-neutral-100);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 1rem hsl(var(--color-primary-400-hsl) / 45%);
+    transition: transform var(--_transition), box-shadow var(--_transition), background-position var(--_transition);
+}
+
+.c-share-fab__toggle img {
+    max-width: 2rem;
+}
+
+
+.c-share-fab__toggle:hover {
+    background-position: 100% 50%;
+    box-shadow: 0 0.35rem 1.25rem hsl(var(--color-primary-400-hsl) / 55%);
+}
+
+.c-share-fab__toggle:focus-visible {
+    outline: 2px solid var(--color-neutral-100);
+    outline-offset: 3px;
+}
+
+.c-share-fab__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.c-share-fab__socials {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--_gap);
+}
+
+.c-share-fab__social {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.8);
+    pointer-events: none;
+    transition: opacity var(--_transition), transform var(--_transition);
+}
+
+.c-share-fab.is-expanded .c-share-fab__social {
+    opacity: 1;
+    transform: translateY(0) scale(1.1);
+    pointer-events: auto;
+}
+
+.c-share-fab.is-expanded .c-share-fab__social:nth-child(1) { transition-delay: 0.05s; }
+.c-share-fab.is-expanded .c-share-fab__social:nth-child(2) { transition-delay: 0.1s; }
+.c-share-fab.is-expanded .c-share-fab__social:nth-child(3) { transition-delay: 0.15s; }
+
+.c-share-fab__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--_social-size);
+    height: var(--_social-size);
+    border-radius: 50%;
+    background: var(--color-primary-500);
+    color: var(--color-neutral-100);
+    transition: transform var(--_transition), background var(--_transition);
+}
+
+.c-share-fab__link img {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+}
+
+.c-share-fab__link:hover {
+    background: var(--color-primary-600);
+    transform: scale(1.1);
+}
+
+/* ********************** de Mobile a TABLET ********************** */
+
+@media (min-width: 48rem) {
+    .c-share-fab {
+        bottom: 2rem;
+        right: 2rem;
+        --_size: 4rem;
+        --_social-size: 3rem;
+        --_gap: 0.85rem;
+    }
+
+    .c-share-fab__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .c-share-fab__link img {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+}

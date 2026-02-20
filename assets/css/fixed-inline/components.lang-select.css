@@ -11,8 +11,7 @@
     align-items: center;
     gap: 0.4em;
     font-size: var(--fz-100);
-    padding: 1rem 1.2rem;
-    background-color: var(--color-alternate-600);
+    padding: .5em .7em;
     border-radius: 4rem;
 }
 

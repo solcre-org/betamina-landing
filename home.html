@@ -179,21 +179,6 @@
                             </details>
                         </div>
                     </li>
-
-                    <!-- <li>
-                        <a href="https://aff.betamina.partners/signup.html" target="_blank" rel="noopener"
-                            class="c-nav__item c-nav__social-media u-tap-size js-nav-item"><img src="/assets/icons/icon-telegram.svg" alt=""></a>
-                    </li>
-
-                    <li>
-                        <a href="https://aff.betamina.partners/signup.html" target="_blank" rel="noopener"
-                            class=" c-nav__item c-nav__social-media u-tap-size js-nav-item"><img src="/assets/icons/icon-linkedin.svg" alt=""></a>
-                    </li>
-
-                    <li>
-                        <a href="https://aff.betamina.partners/signup.html" target="_blank" rel="noopener"
-                            class=" c-nav__item c-nav__social-media u-tap-size js-nav-item"><img src="/assets/icons/icon-instagram.svg" alt=""></a>
-                    </li> -->
                 </ul>
 
 
@@ -1044,41 +1029,80 @@
                             <!-- ! TRAFFIC SOURCE: Start -->
                             <div class="c-from__label c-traffic-dropdown js-traffic-dropdown">
                                 <button type="button" class="c-traffic-dropdown__toggle js-traffic-toggle">
-                                    <span class="c-traffic-dropdown__text js-traffic-display">¿Cómo supiste de
-                                        Betamina?</span>
+                                    <span class="c-traffic-dropdown__text js-traffic-display">¿Cuáles son tus fuentes de tráfico?</span>
                                     <span class="c-traffic-dropdown__arrow u-icon u-icon--arrow-down"></span>
                                 </button>
                                 <div class="c-traffic-dropdown__menu">
                                     <label class="c-traffic-dropdown__item">
-                                        <input type="checkbox" name="traffic-source" value="seo"
+                                        <input type="checkbox" name="traffic-source" value="Seo"
                                             class="c-traffic-dropdown__checkbox">
                                         <span class="c-traffic-dropdown__label">SEO</span>
                                     </label>
                                     <label class="c-traffic-dropdown__item">
-                                        <input type="checkbox" name="traffic-source" value="google"
+                                        <input type="checkbox" name="traffic-source" value="Aso"
                                             class="c-traffic-dropdown__checkbox">
-                                        <span class="c-traffic-dropdown__label">Google / Buscadores</span>
+                                        <span class="c-traffic-dropdown__label">ASO</span>
                                     </label>
                                     <label class="c-traffic-dropdown__item">
-                                        <input type="checkbox" name="traffic-source" value="recomendacion"
+                                        <input type="checkbox" name="traffic-source" value="PPC/UAC"
                                             class="c-traffic-dropdown__checkbox">
-                                        <span class="c-traffic-dropdown__label">Recomendación</span>
+                                        <span class="c-traffic-dropdown__label">PPC/UAC</span>
                                     </label>
                                     <label class="c-traffic-dropdown__item">
-                                        <input type="checkbox" name="traffic-source" value="publicidad"
+                                        <input type="checkbox" name="traffic-source" value="Facebook"
                                             class="c-traffic-dropdown__checkbox">
-                                        <span class="c-traffic-dropdown__label">Publicidad en línea</span>
+                                        <span class="c-traffic-dropdown__label">Facebook</span>
                                     </label>
                                     <label class="c-traffic-dropdown__item">
-                                        <input type="checkbox" name="traffic-source" value="youtube"
+                                        <input type="checkbox" name="traffic-source" value="InApp"
                                             class="c-traffic-dropdown__checkbox">
-                                        <span class="c-traffic-dropdown__label">YouTube</span>
+                                        <span class="c-traffic-dropdown__label">InApp</span>
                                     </label>
+
                                     <label class="c-traffic-dropdown__item">
-                                        <input type="checkbox" name="traffic-source" value="otro"
-                                            class="c-traffic-dropdown__checkbox js-traffic-other-checkbox">
-                                        <span class="c-traffic-dropdown__label">Otro</span>
+                                        <input type="checkbox" name="traffic-source" value="Twitch"
+                                            class="c-traffic-dropdown__checkbox">
+                                        <span class="c-traffic-dropdown__label">Twitch</span>
                                     </label>
+
+                                    <label class="c-traffic-dropdown__item">
+                                        <input type="checkbox" name="traffic-source" value="Youtube"
+                                            class="c-traffic-dropdown__checkbox">
+                                        <span class="c-traffic-dropdown__label">Youtube</span>
+                                    </label>
+
+                                    <label class="c-traffic-dropdown__item">
+                                        <input type="checkbox" name="traffic-source" value="Instagram"
+                                            class="c-traffic-dropdown__checkbox">
+                                        <span class="c-traffic-dropdown__label">Instagram</span>
+                                    </label>
+
+                                
+                                    <label class="c-traffic-dropdown__item">
+                                        <input type="checkbox" name="traffic-source" value="Telegram"
+                                            class="c-traffic-dropdown__checkbox">
+                                        <span class="c-traffic-dropdown__label">Telegram</span>
+                                    </label>
+
+                                             
+                                    <label class="c-traffic-dropdown__item">
+                                        <input type="checkbox" name="traffic-source" value="WhatsApp"
+                                            class="c-traffic-dropdown__checkbox">
+                                        <span class="c-traffic-dropdown__label">WhatsApp</span>
+                                    </label>
+
+                                             
+                                    <label class="c-traffic-dropdown__item">
+                                        <input type="checkbox" name="traffic-source" value="SMS"
+                                            class="c-traffic-dropdown__checkbox">
+                                        <span class="c-traffic-dropdown__label">SMS</span>
+                                    </label>
+
+                                    <label class="c-form__label c-form__label--textarea">
+                                        <textarea name="traffic-links" class="c-form__input c-form__input--textarea js-form__input"
+                                            minlength="20" placeholder="Enlaces a fuentes de tráfico"></textarea>
+                                    </label>
+                            
                                 </div>
                             </div>
 
@@ -1174,7 +1198,23 @@
 
     </footer>
 
-
+    <!-- Share floating button -->
+    <div class="c-share-fab js-share-fab" aria-label="Compartir en redes sociales">
+        <button type="button" class="c-share-fab__toggle js-share-fab-toggle" aria-expanded="false" aria-controls="share-fab-socials" aria-label="Expandir redes sociales">
+        <img src="./assets/icons/icon-share.svg" alt="Compartir en redes sociales" width="24" height="24">
+        </button>
+        <ul id="share-fab-socials" class="c-share-fab__socials" role="list">
+            <li class="c-share-fab__social">
+                <a href="#" target="_blank" rel="noopener" class="c-share-fab__link u-tap-size" aria-label="Compartir en Telegram" title="Telegram"><img src="./assets/icons/icon-telegram.svg" alt=""></a>
+            </li>
+            <li class="c-share-fab__social">
+                <a href="https://www.linkedin.com/company/betamina" target="_blank" rel="noopener" class="c-share-fab__link u-tap-size" aria-label="Compartir en LinkedIn" title="LinkedIn"><img src="./assets/icons/icon-linkedin.svg" alt=""></a>
+            </li>
+            <li class="c-share-fab__social">
+                <a href="#" target="_blank" rel="noopener" class="c-share-fab__link u-tap-size" aria-label="Compartir en Instagram" title="Instagram"><img src="./assets/icons/icon-instagram.svg" alt=""></a>
+            </li>
+        </ul>
+    </div>
 
     <!-- POPUPS LEGAL -->
     <div class="c-popup" id="popup-1">
@@ -1211,6 +1251,7 @@
     <script defer src="./assets/js/sitio/components.faqs.js"></script>
     <script defer src="./assets/js/sitio/components.dialcode.js"></script>
     <script defer src="./assets/js/sitio/components.lang-select.js"></script>
+    <script defer src="./assets/js/sitio/components.share-fab.js"></script>
     <script defer src="./assets/js/sitio/components.form-registration.js"></script>
 
     <!-- <script src="./assets/js/sitio/component.popup.js"></script> -->
