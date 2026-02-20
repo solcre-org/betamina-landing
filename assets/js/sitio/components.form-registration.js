@@ -133,6 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (phoneHiddenInput) phoneHiddenInput.value = "";
     if (contactMethodInput) contactMethodInput.value = "";
     if (contactMethodHiddenInput) contactMethodHiddenInput.value = "";
+    const telegramInput = form.querySelector("#telegram-username");
+    if (telegramInput) telegramInput.value = "";
     if (messageInput) messageInput.value = "";
     if (trafficSourceCheckboxes) {
       trafficSourceCheckboxes.forEach(checkbox => {
@@ -145,6 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (trafficSourceOtherInput) trafficSourceOtherInput.value = "";
     if (trafficSourceOtherLabel) trafficSourceOtherLabel.style.display = "none";
+    const trafficLinksInput = form.querySelector('textarea[name="traffic-links"]');
+    if (trafficLinksInput) trafficLinksInput.value = "";
 
     // Scroll suave al mensaje de éxito
     successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -198,7 +202,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Email:</strong> {{email}}</p>
                                 <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>País:</strong> {{country}}</p>
                                 <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Teléfono:</strong> {{phone}}</p>
-                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Cómo nos conoció:</strong> {{traffic_source}}</p>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Usuario Telegram:</strong> {{telegram_username}}</p>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Fuentes de tráfico:</strong> {{traffic_source}}</p>
+                                <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Enlaces de tráfico:</strong> {{traffic_links}}</p>
                                 <p style="color: #333333; font-size: 14px; margin: 5px 0;"><strong>Mensaje:</strong> {{message}}</p>
                             </div>
                             <div style="margin: 25px 0;">
@@ -241,9 +247,11 @@ document.addEventListener("DOMContentLoaded", function () {
         country: data.country || "No especificado",
         phone: data.phone || "No proporcionado",
         contact_method: data.contact_method || "Email",
+        telegram_username: data.telegram_username || "No proporcionado",
         message: data.message || "",
         traffic_source: data.traffic_source || "No especificado",
-        traffic_source_other: data.traffic_source_other || ""
+        traffic_source_other: data.traffic_source_other || "",
+        traffic_links: data.traffic_links || ""
       }
     };
 
@@ -316,6 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     const contactMethod = contactMethodHiddenInput ? contactMethodHiddenInput.value : (contactMethodInput ? contactMethodInput.value : "");
+    const telegramUsername = (form.querySelector("#telegram-username")?.value || "").trim().replace(/^@/, "") || "";
     const message = messageInput ? messageInput.value.trim() : "";
     
     // Obtener todos los checkboxes seleccionados de traffic source
@@ -329,6 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const trafficSource = trafficSourceValues.length > 0 ? trafficSourceValues.join(", ") : "";
     const trafficSourceOther = trafficSourceOtherInput ? trafficSourceOtherInput.value.trim() : "";
+    const trafficLinks = (form.querySelector('textarea[name="traffic-links"]')?.value || "").trim();
 
     const formData = {
       name,
@@ -336,9 +346,11 @@ document.addEventListener("DOMContentLoaded", function () {
       country: country || "No especificado",
       phone,
       contact_method: contactMethod || "Email",
+      telegram_username: telegramUsername ? "@" + telegramUsername : "",
       message,
       traffic_source: trafficSource,
-      traffic_source_other: trafficSourceOther
+      traffic_source_other: trafficSourceOther,
+      traffic_links: trafficLinks
     };
 
     try {

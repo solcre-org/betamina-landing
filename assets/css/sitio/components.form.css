@@ -90,7 +90,7 @@
     min-height: 12rem;
 }
 
-/* Textarea dentro del dropdown de tráfico */
+
 .c-traffic-dropdown .c-form__label--textarea {
     margin: 0.75rem var(--_input-px) 0.75rem;
     border: .1rem solid hsl(var(--color-primary-900-hsl)/10%);
